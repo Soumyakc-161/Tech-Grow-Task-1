@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micky's Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <script defer src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+    <!-- Hero Section with Top Bar, Navbar & Stats -->
+    
+              <!-- Top Bar -->
+                <div class="top-bar">
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i> Belagavi, Karnataka, India
+                    </div>
+                    <div class="time">
+                        <i class="fas fa-clock"></i> Daily: 8.00 AM - 10.00 PM
+                    </div>
+                    <div class="contact">
+                        <i class="fas fa-phone"></i> +91 - 8971474171
+                    </div>
+                    <div class="email">
+                        <i class="fas fa-envelope"></i> soumya.kco2@gmail.com
+                    </div>
+                    <div class="search-container" id="search-bar">
+                        <input type="text" id="search-input" placeholder="Search by ingredients, cuisine, or prep time..." style="width: 75%; padding: 10px; font-size: 16px;">
+                        <button id="search-btn" style="padding: 10px 15px; font-size: 16px; background-color: #FF69B4; border: none; color: white; cursor: pointer;">
+                            <i class="fas fa-magnifying-glass"></i> Search
+                        </button>
+                        <button id="close-btn" style="padding: 10px; font-size: 16px; background-color: red; color: white; border: none; cursor: pointer; margin-left: 10px; display: none;">
+                            ❌ Close
+                        </button>
+                    </div>
+                    <!-- Seeting icon on top bar -->
+                    <i class="fa-solid fa-gear" id="settingsIcon"></i>
+
+                    <div class="popup-card" id="popupCard" style="display: none;">
+                      <div class="popup-content">
+                        <span class="close-btn" id="closePopup">&times;</span>
+                        <h2>Calorie and Nutrition Calculator</h2>
+                        <p>Adding a "Calorie and Nutrition Calculator" to your recipes website is a fantastic idea! It enhances user experience by helping them make informed dietary choices.</p>
+                        <ul>
+                          <li>Database of Nutritional Information</li>
+                          <li>Ingredient Input</li>
+                          <li>Nutritional Analysis</li>
+                          <li>Portion-Based Calculations</li>
+                          <li>Interactive Interface</li>
+                          <li>Visual Representation</li>
+                          <li>Integration with Health Goals</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+             <!-- setting icon end -->       
+                    <!-- Notification -->
+                    <div id="notification" style="display: none; text-align: center; margin-top: 20px; font-size: 18px; color: rgb(255, 255, 255);">
+                        No recipes found. Go to the <a href="categories.html" style="color: greenyellow;">categories page</a>, you might find what you’re looking for!
+                    </div>
+                    
+                    <!-- Recipe Cards (example structure) -->
+                    <div id="recipe-results" class="recipe-results">
+                        <!-- Results will populate here -->
+                    </div>  
+                </div>
+
+                <!-- Sticky Navbar -->
+                <script>
+                    function scrollToSection(sectionId) {
+                        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+                    }
+                </script>
+                
+                <nav class="navbar">
+                    <div class="logo">
+                        <img id="logo-img" src="images/logo.png" alt="Micky's Recipes Logo">
+                        <h2>Micky's Recipes</h2>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="#" onclick="scrollToSection('home'); playClickSound()" onmouseover="playHoverSound()">Home</a></li>
+                        <li><a href="#" onclick="scrollToSection('recipes'); playClickSound()" onmouseover="playHoverSound()">Recipes</a></li>
+                        <li><a href="categories.html" onclick="playClickSound()" onmouseover="playHoverSound()">Categories </a></li>
+                        <li>
+                            <a href="favorite.html" onclick="playClickSound()" onmouseover="playHoverSound()">My Favorites</a>
+                        </li>
+                        
+                        <!-- Add Audio Elements -->
+                        <audio id="clickSound" src="sounds/click.mp3"></audio>
+                        <audio id="hoverSound" src="sounds/hover.mp3"></audio>
+                        
+                        <script>
+                            function playClickSound() {
+                                document.getElementById("clickSound").play();
+                            }
+                        
+                            function playHoverSound() {
+                                document.getElementById("hoverSound").play();
+                            }
+                        </script>
+                       <li><a href="#" onclick="scrollToSection('about'); playClickSound()" onmouseover="playHoverSound()">About</a></li>
+                       <li><a href="#" onclick="scrollToSection('contact'); playClickSound()" onmouseover="playHoverSound()">Contact</a></li>
+                    </ul>
+
+                    <!-- Icons Section -->
+                    <div class="nav-icons">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+                        <i id="wand-icon" class="fa-solid fa-wand-magic-sparkles"></i> <!-- Wand Icon -->
+                        
+                        <a href="login-page.html">
+                            <i id="login-icon" class="fas fa-user-circle"></i>
+                        </a>
+                    </div>
+                </nav>
+            <!-- Audio Elements -->
+            <audio id="clickSound">
+                <source src="images/effects/cork-pop-35952.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="hoverSound">
+                <source src="images/effects/pop-39222.mp3" type="audio/mpeg">
+            </audio>
+            <!-------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            <!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+           <!--sidebar -->
+
+    <button class="menu-btn" onclick="openSidebar()">&#9776; Menu</button>
+
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">Recipes</a>
+        <a href="#">Categories</a>
+        <a href="#">Favorites</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+    <script>
+        function openSidebar() {
+            document.getElementById("sidebar").style.width = "250px";
+        }
+
+        function closeSidebar() {
+            document.getElementById("sidebar").style.width = "0";
+        }
+    </script>
+
+    <style>
+        .top-bar {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .navbar {
+            background-color: #000000;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .nav-links li {
+            display: inline;
+            margin: 0 15px;
+        }
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.37);
+            text-decoration: none;
+        }
+        .menu-btn {
+            font-size: 30px;
+            cursor: pointer;
+            background-color: #111;
+            color: rgba(221, 255, 0, 0.689);
+            padding: 10px 15px;
+            border: none;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1100;
+        }
+        .menu-btn :hover {
+            background-color: #ff0000;
+        }
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            z-index: 1000;
+            margin-top: 40px;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            color: #f1f1f100;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 768px) {
+            .navbar {
+                display: none;
+            }
+
+            .top-bar {
+                display: none;
+            }
+
+            .sidebar {
+                width: 0;
+            }
+        }
+        @media screen and (min-width: 769px) {
+            .menu-btn {
+                display: none;
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+
+          <!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+            <!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+        <!-- Hero Content -->
+        <!-- Hero Section -->
+        <section class="hero">
+        <section class="hero">
+            <div class="overlay"></div>
+        
+            <!-- Hero Content -->
+            <div class="hero-content" data-aos="zoom-in" data-aos-duration="800">
+                <h1 id="hero-title" onclick="changeLanguage()">Discover <span>Delicious Recipes</span> for Every Occasion</h1>
+                <p class="highlight">Find Your Next Favorite Dish</p>
+                <p class="subtext" id="hero-subtext">
+                    Explore a variety of mouth-watering recipes, from quick breakfasts to gourmet dinners. Whether you're a beginner or a seasoned chef, we've got something for you.
+                </p>
+                <!-- Animated Chef Image -->
+                <img src="images/loading-img-removebg-preview.png" alt="Hero Image" class="hero-img">
+                <audio id="click-sound" src="images/effects/switch-305799.mp3"></audio>
+            </div>
+            <!-- Hero Actions (Boxes + Buttons in One Row) -->
+            <div class="hero-actions">
+                <!-- Left Side - Boxes -->
+                <div class="hero-left">
+                    <div class="box">
+                        <a href="categories.html">
+                            <img src="images/menu-1.png" alt="Recipes">
+                            <p>500+ <br>Recipes</p>
+                        </a>
+                    </div>
+                    
+                    
+                    <div class="box-1" onclick="scrollToReviews()">
+                        <img src="images/logo.png" alt="Recipes">
+                        <p>(4.9)<br>20K Reviews</p>
+                    </div>
+                    
+                </div>
+                <script>
+                    function scrollToReviews() {
+                        document.getElementById('customerReviews').scrollIntoView({ behavior: 'smooth' });
+                    }
+                </script>
+                
+        
+                <!-- Right Side - Buttons -->
+                <div class="hero-right">
+                    <button class="watch-video" onclick="openVideoPage()"> 
+                        <span>Watch Video</span>
+                        <div class="liquid"></div>
+                    </button>
+                
+                    <script>
+                        function openVideoPage() {
+                            window.open('video.html', '_self'); // Redirect to video page
+                        }
+                    </script>
+                    
+                </div>
+                
+            </div>
+        </section>
+      
+       
+        
+    </section>
+
+        <!-- Hero Stats, Scroll & Buttons in the Same Line -->
+        
+  <style>
+.recipe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+    background: #1a1a1a;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.recipe-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(255, 204, 0, 0.5);
+}
+
+.recipe-sections {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    flex-wrap: wrap;
+}
+
+.recipe-section {
+    width: 320px;
+    padding: 40px;
+    background: linear-gradient(135deg, #ff6f61, #d32f2f);
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.recipe-section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+.recipe-list {
+    display: none;
+    list-style-type: none;
+    padding: 10px 0 0;
+    text-align: left;
+}
+
+.recipe-section:hover .recipe-list {
+    display: block;
+}
+
+.recipe-list li {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.recipe-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.recipe-section:hover::after {
+    opacity: 1;
+}
+
+.recipe-section:hover h2,
+.recipe-section:hover .subheading {
+    color: #fff;
+    z-index: 1;
+    position: relative;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Responsive Design - Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    .recipe-sections {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center;
+        gap: 20px;
+    }
+    .recipe-section {
+        width: 100%; /* Full width for sections */
+    }
+}
+
+/* Responsive Design - Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .recipe-container {
+        padding: 20px 10px;
+    }
+    .recipe-title {
+        font-size: 24px;
+    }
+    .recipe-sections {
+        gap: 15px;
+    }
+    .recipe-section {
+        width: 100%; /* Full width for sections */
+        margin: 10px 0;
+    }
+    .recipe-list li {
+        font-size: 14px; /* Smaller text for mobile */
+    }
+}
+
+/* Extreme Small Screens (max-width: 320px) */
+@media (max-width: 320px) {
+    .recipe-title {
+        font-size: 20px;
+    }
+    .recipe-section {
+        padding: 20px; /* Compact layout */
+    }
+    .recipe-list li {
+        font-size: 12px;
+    }
+}
+  </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <!-- Add AOS CSS & JS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<div class="recipe-container" data-aos="fade-up">
+
+    <h1 class="recipe-title" data-aos="zoom-in" data-aos-delay="200">🍽️✨ Trending Recipes ✨🍽️</h1>
+
+    <div class="recipe-sections">
+        <section class="recipe-section" data-aos="fade-right" data-aos-delay="300">
+            <h2>🔥 Trending Recipes</h2>
+            <p class="subheading">💖 Most loved by our community</p>
+            <ul class="recipe-list">
+                <li>Butter Chicken</li>
+                <li>Paneer Tikka Masala</li>
+                <li>Hyderabadi Biryani</li>
+                <li>Masala Dosa</li>
+                <li>Pani Puri</li>
+            </ul>
+        </section>
+
+        <section class="recipe-section" data-aos="fade-up" data-aos-delay="500">
+            <h2>⏳ Quick & Easy</h2>
+            <p class="subheading">⏱️ Delicious meals in under 30 minutes</p>
+            <ul class="recipe-list">
+                <li>Chole Bhature</li>
+                <li>Palak Paneer</li>
+                <li>Chicken Tikka</li>
+                <li>Aloo Paratha</li>
+                <li>Rasmalai</li>
+            </ul>
+        </section>
+
+        <section class="recipe-section" data-aos="fade-left" data-aos-delay="700">
+            <h2>🍂 Seasonal Specials</h2>
+            <p class="subheading">🌟 Perfect recipes for the season</p>
+            <ul class="recipe-list">
+                <li>Sarson da Saag with Makki di Roti (Winter)</li>
+                <li>Mango Lassi (Summer)</li>
+                <li>Gajar ka Halwa (Winter)</li>
+                <li>Aam Panna (Summer)</li>
+                <li>Modak (Ganesh Chaturthi Special)</li>
+            </ul>
+        </section>
+    </div>
+
+</div>
+
+
+<!-- Initialize AOS -->
+<script>
+    AOS.init({
+        duration: 1000, // Animation duration in ms
+        once: true, // Animation happens only once
+    });
+</script>
+
+      
+
+
+
+  <!-- ............................. recvipes /Menu Container ................................................-->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<div class="section menu" aria-label="menu-label" id="recipes">
+    <div lass="menu-card scroll-animation">
+    <!-- Contact Section -->
+<div class="contact-section" id="contact">
+
+        <h2 class="headline-1 section-title text-center" data-aos="fade-down" data-aos-duration="1000">
+            Explore Quick & Easy Meals Recipes
+        </h2>
+        
+        <p class="section-subtitle text-center label-2" data-aos="fade-up" data-aos-delay="300">
+            Perfect if you're targeting busy cooks or those new to the kitchen.
+        </p>
+        
+        <p class="section-subtitle text-center" data-aos="zoom-in" data-aos-delay="500">
+            Choose from Italian, Indian, Mexican, and more<br><br>
+        
+            <span class="animated-text" data-aos="flip-up" data-aos-delay="700">
+                Cooking Time: “How much time do you have?”
+            </span>
+        </p>
+        
+        <!-- Include AOS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        
+          
+          <style>
+            .animated-text {
+              color: #ff6347; /* Change text color to a tomato shade */
+              animation: fadeIn 2s ease-in-out, textGlow 1.5s infinite alternate;
+            }
+          
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+              }
+              to {
+                opacity: 1;
+              }
+            }
+          
+            @keyframes textGlow {
+              0% {
+                text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347, 0 0 15px #ff4500;
+              }
+              100% {
+                text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500, 0 0 40px #ff6347;
+              }
+            }
+          </style>
+          
+         
+    
+        <ul class="grid-list">
+
+            <li data-aos="fade-up" data-aos-duration="1000">
+                <div class="menu-card" data-category="all easy">
+                    <figure class="card-banner" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="images/Garlic Butter Pasta.jpg" alt="Garlic Butter Pasta">
+                    </figure>
+                    <div class="title-wrapper" data-aos="fade-right" data-aos-delay="500">
+                        <h3><a href="#" class="card-title">Garlic Butter Pasta</a></h3>
+                    </div>
+                    <p class="card-text" style="font-family: 'Comic Sans MS';" data-aos="fade-up" data-aos-delay="700">
+                        🍝 "A perfect blend of flavors and simplicity" <br><br>
+                        ⏱️ Prep Time: 15 minutes
+                    </p>
+                    <span class="favorite-icon" 
+                    onclick="toggleFavorite(this, 'Garlic Butter Pasta', 'images/Garlic Butter Pasta.jpg')" 
+                    data-name="Garlic Butter Pasta">
+                  <i class="fa-regular fa-thumbs-up"></i>
+              </span>
+              
+                    
+                </div>
+            </li>
+            
+            <li data-aos="fade-up" data-aos-duration="1000">
+                <div class="menu-card" data-category="all easy">
+                    <figure class="card-banner" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="images/Avocado Toast with Egg.png" alt="Avocado Toast with Egg">
+                    </figure>
+                    <div class="title-wrapper" data-aos="fade-right" data-aos-delay="500">
+                        <h3><a href="#" class="card-title">Avocado Toast with Egg</a></h3>
+                    </div>
+                    <p class="card-text" style="font-family: 'Comic Sans MS';" data-aos="fade-up" data-aos-delay="700">
+                        🥑 "A healthy and delicious breakfast in minutes!" <br><br>
+                        ⏱️ Prep Time: 10 minutes
+                    </p>
+                    <span class="favorite-icon" 
+                    onclick="toggleFavorite(this, 'Avocado Toast with Egg', 'images/Avocado Toast with Egg.png')" 
+                    data-name="Avocado Toast with Egg">
+                  <i class="fa-regular fa-thumbs-up"></i>
+              </span>
+              
+                    
+                </div>
+            </li>
+            
+            <li data-aos="fade-up" data-aos-duration="1000">
+                <div class="menu-card" data-category="all medium">
+                    <figure class="card-banner" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="images/Chole Bhature.png" alt="Chole Bhature">
+                    </figure>
+                    <div class="title-wrapper" data-aos="fade-right" data-aos-delay="500">
+                        <h3><a href="#" class="card-title">Chole Bhature</a></h3>
+                    </div>
+                    <p class="card-text" style="font-family: 'Comic Sans MS';" data-aos="fade-up" data-aos-delay="700">
+                        🌶️ "A spicy and tangy Punjabi dish loved by all!" <br><br>
+                        ⏱️ Prep Time: 45 minutes
+                    </p>
+                            <span class="favorite-icon" 
+            onclick="toggleFavorite(this, 'Chole Bhature', 'images/Chole Bhature.png')" 
+            data-name="Chole Bhature">
+            <i class="fa-regular fa-thumbs-up"></i>
+        </span>
+
+                    
+                </div>
+            </li>
+            
+            <!-- Include AOS -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            
+        
+            <li data-aos="fade-up" data-aos-duration="1000">
+                <div class="menu-card" data-category="all medium">
+                    <figure class="card-banner" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="images/Paneer Butter Masala.png" alt="Paneer Butter Masala">
+                    </figure>
+                    <div class="title-wrapper" data-aos="fade-right" data-aos-delay="500">
+                        <h3><a href="#" class="card-title">Paneer Butter Masala</a></h3>
+                    </div>
+                    <p class="card-text" style="font-family: 'Comic Sans MS';" data-aos="fade-up" data-aos-delay="700">
+                        🧀 "A rich, creamy, and flavorful paneer curry perfect for naan or rice." <br><br>
+                        ⏱️ Prep Time: 30 minutes
+                    </p>
+                    <span class="favorite-icon" 
+      onclick="toggleFavorite(this, 'Paneer Butter Masala', 'images/Paneer Butter Masala.png')" 
+      data-name="Paneer Butter Masala">
+    <i class="fa-regular fa-thumbs-up"></i>
+</span>
+
+                    
+                </div>
+            </li>
+            
+            <li data-aos="fade-up" data-aos-duration="1000">
+                <div class="menu-card" data-category="all easy">
+                    <figure class="card-banner" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="images/Banana Oat Pancakes.png" alt="Banana Oat Pancakes">
+                    </figure>
+                    <div class="title-wrapper" data-aos="fade-right" data-aos-delay="500">
+                        <h3><a href="#" class="card-title">Banana Oat Pancakes</a></h3>
+                    </div>
+                    <p class="card-text" style="font-family: 'Comic Sans MS';" data-aos="fade-up" data-aos-delay="700">
+                        🥞 "Fluffy, healthy, and naturally sweetened!" <br><br>
+                        ⏱️ Prep Time: 20 minutes
+                    </p>
+                    <span class="favorite-icon" 
+                    onclick="toggleFavorite(this, 'Banana Oat Pancakes', 'images/Banana Oat Pancakes.png')" 
+                    data-name="Banana Oat Pancakes">
+                  <i class="fa-regular fa-thumbs-up"></i>
+              </span>
+              
+                    
+                </div>
+            </li>
+            
+            <li data-aos="fade-up" data-aos-duration="1000">
+                <div class="menu-card" data-category="all hard">
+                    <figure class="card-banner" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="images/Rajasthani Dal Baati Churma.png" alt="Rajasthani Dal Baati Churma">
+                    </figure>
+                    <div class="title-wrapper" data-aos="fade-right" data-aos-delay="500">
+                        <h3><a href="#" class="card-title">Rajasthani Dal Baati Churma</a></h3>
+                    </div>
+                    <p class="card-text" style="font-family: 'Comic Sans MS';" data-aos="fade-up" data-aos-delay="700">
+                        🍛 "A traditional three-part Rajasthani meal rich in flavor and texture." <br><br>
+                        ⏱️ Prep Time: 1 hour
+                    </p>
+                    <span class="favorite-icon" 
+                    onclick="toggleFavorite(this, 'Rajasthani Dal Baati Churma', 'images/Rajasthani Dal Baati Churma.png')" 
+                    data-name="Rajasthani Dal Baati Churma">
+                  <i class="fa-regular fa-thumbs-up"></i>
+              </span>
+              
+                    
+                </div>
+            </li>
+           
+            
+           
+           
+           
+            
+            <!-- AOS Library -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            
+            
+        
+        </ul>
+        
+
+        <p class="menu-text">🍴 Dive into 500+ mouthwatering recipes made for every season! 🥘<br>✨ Let's make every meal a masterpiece you'll savor forever! 💛</p>
+
+        <a href="menu.html" class="btn btn-primary">View All Recipes</a>
+
+    </div>
+</div>
+</section>
+
+
+     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+
+
+    <!--About Section Start -->
+    <!-- About Section -->
+<section class="our-story" id="about">
+
+        <!-- About Us Section -->
+<div class="our-story" data-aos="fade-up" data-aos-duration="1000">
+    <div class="story-content">
+        <h2 data-aos="fade-right" data-aos-duration="800">🍽️ About Us</h2>
+        <p data-aos="fade-up" data-aos-delay="300">
+            Welcome to <strong>Micky's Recipes!</strong> 🎉🍴 Where every bite is a celebration of **flavor, passion, and creativity**.  
+            At **Micky's Recipes**, we believe that food is more than just a meal—it's an experience, a memory, and a way to bring people together.  
+            Whether you're a seasoned chef or a kitchen newbie, our handpicked recipes guide you to create **mouthwatering dishes** effortlessly.  
+            From **traditional family classics** to **modern gourmet delights**, every recipe is crafted with love to make your dining experience truly special. 🥗🍛
+        </p>
+
+        <h3 data-aos="fade-left" data-aos-delay="400">⭐ Our Achievements:</h3>
+        <ul>
+            <li data-aos="fade-up" data-aos-delay="500">🕰️ <strong>Years of Culinary Excellence:</strong> Crafting flavors that bring joy for <em>X</em> years.</li>
+            <li data-aos="fade-up" data-aos-delay="600">👨‍🍳 <strong>Expert Chefs:</strong> Learn from passionate professionals who create **magic on the plate**.</li>
+            <li data-aos="fade-up" data-aos-delay="700">📚 <strong>500+ Unique Recipes:</strong> From quick bites to gourmet feasts, we've got something for every craving.</li>
+            <li data-aos="fade-up" data-aos-delay="800">🥳 <strong>1,000+ Happy Home Cooks:</strong> Join our growing community of food lovers worldwide! 🍽️✨</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Include AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+
+<!-- AOS Library CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+        <!-- AOS Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+    
+        <div class="story-image">
+            <img src="images/istockphoto-1130792581-612x612.jpg" alt="Main Dish" class="main-dish">
+            
+            <!-- Dish Container for Rotation -->
+            <div class="dish-container" id="dish-container">
+                <img src="images/Paneer Butter Masala.png" alt="Paneer Butter Masala" class="dish dish-top-left" 
+                     onclick="showDishDetails('Paneer Butter Masala', 'A rich and creamy North Indian dish made with soft paneer cubes simmered in a luscious tomato-based gravy, infused with aromatic spices and butter.')">
+                
+                <img src="images/Delicious-Spicy-Tandoori-Chicken-Recipe.jpeg" alt="Tandoori Chicken" class="dish dish-top-right" 
+                     onclick="showDishDetails('Tandoori Chicken', 'A flavorful and spicy dish made by marinating chicken in yogurt and spices, then roasting it in a tandoor for a smoky, juicy texture.')">
+                
+                <img src="images/Hyderabadi biryani recipe _ How to make hyderabadi biryani.jpeg" alt="Hyderabadi Biryani" class="dish dish-middle-left" 
+                     onclick="showDishDetails('Hyderabadi Biryani', 'A world-famous biryani from Hyderabad, made with aromatic basmati rice, tender meat, and a blend of traditional spices, slow-cooked to perfection.')">
+                
+                <img src="images/Easy Oven-Baked Chicken Shawarma.jpeg" alt="Chicken Shawarma" class="dish dish-middle-right" 
+                     onclick="showDishDetails('Chicken Shawarma', 'A Middle Eastern delicacy featuring marinated, spiced chicken roasted to perfection, served with pita bread and creamy garlic sauce.')">
+                
+                <img src="images/noodle-with-chicken-bowl-side-view.jpg" alt="Chicken Noodles" class="dish dish-bottom-left" 
+                     onclick="showDishDetails('Chicken Noodles', 'A delightful Asian-style dish made with stir-fried noodles, tender chicken, and a mix of vibrant vegetables and savory sauces.')">
+                
+                <img src="images/Soy Salmon Steak Recipe.jpeg" alt="Soy Salmon Steak" class="dish dish-bottom-right" 
+                     onclick="showDishDetails('Soy Salmon Steak', 'A deliciously glazed salmon steak marinated in soy sauce, garlic, and honey, then grilled to perfection for a rich and savory taste.')">
+            </div>
+            
+            
+        </div>
+        <!-- Dish Detail Card (Hidden Initially) -->
+        <div id="dish-detail-card" class="dish-card hidden" onclick="hideDishDetails()">
+            <div class="dish-card-content" onclick="event.stopPropagation();" data-aos="zoom-in">
+                <h2 id="dish-title"></h2>
+                <p id="dish-description"></p>
+                <button onclick="hideDishDetails()">Close</button>
+            </div>
+        </div>
+
+    </section>
+    <script>
+        let dishContainer = document.getElementById('dish-container');
+        let isRotating = true; // Track rotation state
+    
+        function showDishDetails(title, description) {
+            document.getElementById('dish-title').innerText = title;
+            document.getElementById('dish-description').innerText = description;
+            document.getElementById('dish-detail-card').classList.remove('hidden');
+            dishContainer.style.animationPlayState = 'paused'; // Stop rotation
+            isRotating = false;
+        }
+    
+        function hideDishDetails() {
+            document.getElementById('dish-detail-card').classList.add('hidden');
+            if (!isRotating) {
+                dishContainer.style.animationPlayState = 'running'; // Resume rotation
+                isRotating = true;
+            }
+        }
+    </script>
+    <!--about section ends here...........-->
+
+    <!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+  
+
+
+     <!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+   
+
+    <!---CUSTOMER REVIEWS ............................................................................................................................-->
+    <!-- AOS CSS -->
+<!-- AOS CSS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,  // Animation duration
+        once: true,      // Animation happens only once
+    });
+</script>
+
+
+<div class="customer-reviews" id="customerReviews" data-aos="fade-up">
+    <h2>Customer Reviews</h2>
+    <div class="reviews-container">
+        <div class="review" data-aos="zoom-in">
+            <img src="images/customer1.jpg" alt="Customer" data-aos="flip-left">
+            <div class="review-content">
+                <div class="stars">⭐⭐⭐⭐</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="review" data-aos="zoom-in" data-aos-delay="200">
+            <img src="images/customer2.jpg" alt="Customer" data-aos="flip-left" data-aos-delay="400">
+            <div class="review-content">
+                <div class="stars">⭐⭐⭐</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="review" data-aos="zoom-in" data-aos-delay="400">
+            <img src="images/customer3.jpg" alt="Customer" data-aos="flip-left" data-aos-delay="600">
+            <div class="review-content">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="review" data-aos="zoom-in" data-aos-delay="600">
+            <img src="images/customer4.jpg" alt="Customer" data-aos="flip-left" data-aos-delay="800">
+            <div class="review-content">
+                <div class="stars">⭐⭐⭐⭐</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+   <!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    
+   <!-------------------------------------------------------------------------------------------------------------------------------------------------> 
+    <!--ends here-->
+
+  
+    
+<!---...............................................................................................--> 
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Contact Section -->
+
+<div class="contact-section">
+    <h2>Contact</h2>
+    <div class="contact-form">
+        <form id="contactForm">
+            <div class="input-row">
+                <input type="text" id="nameInput" placeholder="Your Name" required>
+                <input type="text" id="phoneInput" placeholder="Phone Number" required>
+            </div>
+            <div class="input-row">
+                <input type="date" id="dateInput" required>
+                <input type="text" id="timeInput" placeholder="Select Time" readonly onclick="openClock()" required>
+            </div>
+
+            <div id="clockPopup" style="display: none;">
+                <div class="clock-container" onclick="setTime(event)">
+                    <div class="clock-number" data-hour="12">12</div>
+                    <div class="clock-number" data-hour="3">3</div>
+                    <div class="clock-number" data-hour="6">6</div>
+                    <div class="clock-number" data-hour="9">9</div>
+                    <div class="clock-hand" id="hourHand"></div>
+                    <div class="clock-hand minute-hand" id="minuteHand"></div>
+                </div>
+            </div>
+
+            <textarea id="messageInput" placeholder="Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("contactForm");
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                showPopup("Your form has been submitted successfully!");
+                form.reset();
+            });
+        });
+
+        function showPopup(message) {
+            const popup = document.createElement("div");
+            popup.innerText = message;
+            popup.style.position = "fixed";
+            popup.style.bottom = "20px";
+            popup.style.right = "20px";
+            popup.style.background = "yellow";
+            popup.style.color = "black";
+            popup.style.padding = "15px 25px";
+            popup.style.borderRadius = "8px";
+            popup.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.3)";
+            popup.style.fontSize = "1.2rem";
+            popup.style.fontWeight = "bold";
+            popup.style.zIndex = "1000";
+            document.body.appendChild(popup);
+            setTimeout(() => popup.remove(), 3000);
+        }
+
+        function openClock() {
+            document.getElementById("clockPopup").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
+
+
+    <style>
+/* Background Bubble Effect */
+.bubble-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* Increased to make it visible */
+}
+
+.bubble {
+    position: absolute;
+    bottom: -20px; /* Start from bottom */
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 0, 0.7);
+    border-radius: 50%;
+    animation: floatUp 6s linear;
+    opacity: 0.8;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.bubble:hover {
+    transform: scale(1.5);
+    background: white;
+    opacity: 0.5;
+}
+
+/* Bubble Animation */
+@keyframes floatUp {
+    from {
+        transform: translateY(100vh);
+    }
+    to {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+ </style>
+    <script>
+ function createBubble() {
+    const bubble = document.createElement("div");
+    bubble.classList.add("bubble");
+
+    // Random position & size
+    const size = Math.random() * 40 + 10; // 10px - 50px
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.left = `${Math.random() * 100}vw`;
+
+    // Start from bottom
+    bubble.style.bottom = "-20px"; 
+
+    // Add animation
+    bubble.style.animationDuration = `${Math.random() * 3 + 5}s`; // Random speed (3s-8s)
+
+    // Remove bubble when clicked
+    bubble.addEventListener("click", () => {
+        bubble.style.opacity = "0";
+        setTimeout(() => bubble.remove(), 200);
+    });
+
+    document.querySelector(".bubble-container").appendChild(bubble);
+
+    // Remove bubble after animation
+    setTimeout(() => bubble.remove(), 8000);
+}
+
+// Generate bubbles every 400ms
+setInterval(createBubble, 400);
+
+    </script>
+   
+
+<!------////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!-- Footer Section-->
+<footer>
+  
+
+    <!-- Social Media Icons with Links -->
+    <ul class="social_icon">
+        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-github"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+    </ul>
+
+    <!-- Footer Menu Links -->
+    <ul class="footer-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+
+    <!-- Footer Text -->
+    <p class="footer-text">© 2025. All Rights Reserved | Soumya K C - 161</p>
+</footer>
+
+<!-- Ionicons Script -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+</html>

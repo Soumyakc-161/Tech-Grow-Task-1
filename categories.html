@@ -1,0 +1,2196 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micky's Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="section menu" aria-label="menu-label" id="menu">
+        <h2 class="headline-1 section-title text-center">Browse Recipes by Category</h2>
+        <p class="section-subtitle text-center label-2">Find Recipes That Match Your Mood</p>
+
+        <div class="search-container" id="search-bar">
+            <input type="text" id="search-input" placeholder="Search by ingredients, cuisine, or prep time..." style="width: 75%; padding: 10px; font-size: 16px;">
+            <button id="search-btn" style="padding: 10px 15px; font-size: 16px; background-color: #FF69B4; border: none; color: white; cursor: pointer;">
+                <i class="fas fa-magnifying-glass"></i> Search
+            </button>
+            <button id="close-btn" style="padding: 10px; font-size: 16px; background-color: red; color: white; border: none; cursor: pointer; margin-left: 10px; display: none;">
+                ❌ Close
+            </button>
+    </div>
+            <!-- Notification -->
+            <div id="notification" style="display: none; text-align: center; margin-top: 20px; font-size: 18px; color: greenyellow;">
+                Oops! No recipes found.<strong>Try adjusting your filters or searching for a different dish,<br>you might find what you’re looking for!</strong>
+            </div>
+            
+            <!-- Recipe Results -->
+            <div id="recipe-results" class="recipe-results">
+                <!-- Results will populate here -->
+            </div>
+            
+
+        <div class="category-container">
+            <button class="category-btn" data-filter="all">All</button>
+            <button class="category-btn" data-filter="quick-easy">Quick & Easy</button>
+            <button class="category-btn" data-filter="vegetarian">Vegetarian</button>
+            <button class="category-btn" data-filter="snacks">Snacks</button>
+        </div>
+
+
+
+        <div class="menu-section">
+            <audio id="sheepSound" src="images/effects/1-ovejita-parpadeowav-98918.mp3"></audio>
+            <div class="menu-grid">
+                <!-- Snacks start here -->
+                <div class="menu-item" data-category="snacks">
+                    <div class="image-details-container">
+                        <img src="images/snacks/Masala-Popcorn.png" alt="Masala-Popcorn">
+                        <div class="menu-details">
+                            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Masala-Popcorn</h3>
+                            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$9.99</p>
+                        </div>
+                    </div>
+                    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">Get ready for a flavor explosion! 💥 This Masala Popcorn is so easy, you'll be popping like a pro in no time! 🍿🌶️</p>
+                    <button class="read-view-btn">view...</button>
+                   
+                    <div class="full-desc" style="display: none;">
+                        <p style="font-family: 'Comic Sans MS', sans-serif; color: #FF69B4; font-size: 16px;"><strong style="color: #98FB98;">📈</strong> Super Easy! (Like making friends on the playground 🤸‍♀️)</p>
+                        <p style="font-family: 'Comic Sans MS', sans-serif; color: #FF69B4;  font-size: 16px;"><strong style="color: #87CEEB;"> ⏱️</strong> About 5 minutes (That's how long it takes to find your favorite movie! 🍿)</p>
+                        <p style="font-family: 'Comic Sans MS', serif;  color: #FF69B4; font-size: 16px;"><strong style="color: #DA70D6;">🍳 </strong> About 10 minutes (Just a little longer than your favorite cartoon episode! 📺)</p>
+                        <p style="font-family: 'Comic Sans MS', sans-serif; color: #FF69B4;  font-size: 16px;"><strong style="color: #FFD700;">🍽️</strong> 4 people (Enough to share with your family or friends! 🤗)</p>
+                
+                        <p style="font-family: 'Comic Sans MS', sans-serif; font-size:  20px;"><strong style="color: #ffffff;">What You'll Need (Ingredients):</strong></p>
+                        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align:justify;">
+                            <li style="color: #00ffff;">1 cup of popcorn kernels (Those little hard things that turn into fluffy popcorn! ✨)</li>
+                            <li style="color: #00ffff;">2 tablespoons of butter (It makes everything taste better! 🧈)</li>
+                            <li style="color: #00ffff;">1 teaspoon of red chili powder (This gives it a little kick, but you can use less if you don't like it spicy! 🌶️)</li>
+                            <li style="color: #00ffff;">1 teaspoon of chaat masala (This is a special Indian spice mix that makes it super flavorful! 🌟)</li>
+                            <li style="color: #00ffff;">Salt (Just a pinch, to taste! 🤏)</li>
+                        </ul>
+                
+                        <p style="font-family: 'Comic Sans MS', serif; font-size:  20px;"><strong style="color: #ffffff;">What You'll Need (Tools):</strong></p>
+                            <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align:justify;">
+                                <li style="color: #CD5C5C;">A large pan with a lid (Like a superhero's shield! 🛡️)</li>
+                                <li style="color: #CD5C5C;">A spoon (For stirring! 🥄)</li>
+                                <li style="color: #CD5C5C;">A bowl (To put the finished popcorn in! 🥣)</li>
+                            </ul>
+                
+                            <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #ffffff;">Let's Make It! (Instructions):</strong></p>
+                            <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align:justify;">
+                                <li style="color: #DC143C;"><strong>Melt the Butter:</strong> Put the butter in the pan and turn the stove on to medium heat. Let the butter melt until it's all liquid. (Ask a grown up to help with the stove! 🔥)</li>
+                                <li style="color: #8A2BE2"><strong>Add the Kernels:</strong> Pour the popcorn kernels into the pan and stir them around so they're all coated in the butter. (Hear them start to dance in the pan! 💃)</li>
+                                <li style="color: #D3D3D3;"><strong>Cover and Pop:</strong> Put the lid on the pan! You'll start to hear the kernels popping. Be careful, it can get loud! (Listen to the popcorn party! 🎉)</li>
+                                <li style="color: #FFA500;"><strong>Listen Carefully:</strong> Keep the pan on the heat until the popping slows down to a few seconds between pops. This means most of the kernels have popped. (When the popping slows down, it's almost ready! 🤫)</li>
+                                <li style="color: #32CD32;"><strong>Spice It Up:</strong> Take the pan off the heat and carefully pour the popcorn into a big bowl. (Carefully pour the fluffy clouds of popcorn! ☁️)</li>
+                                <li style="color: #FF69B4;"><strong>Add the Flavors:</strong> Sprinkle the red chili powder, chaat masala, and salt over the popcorn. (Add the magic spice dust! ✨)</li>
+                                <li style="color: #00FFFF;"><strong>Toss and Enjoy:</strong> Gently toss the popcorn with the spoon so all the spices are evenly spread. (Mix it all up like a flavor rainbow! 🌈)</li>
+                                <li style="color: #C0C0C0;"><strong>Taste and Adjust:</strong> Have a little taste! If you want view spice or salt, add a little view and toss again. (Taste test time! 😋)</li>
+                                <li style="color: RGB(0, 94, 255);"><strong>Serve and Share:</strong> Now it's ready to eat! Share it with your family or friends while watching a movie or playing a game. (Share the yummy goodness! 💖)</li>
+                            </ol>
+                    
+                
+                            <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #ffffff;">Important Tips:</strong></p>
+                            <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align:justify;">
+                                <li style="color: #FAFAD2;">Always ask a grown-up for help when using the stove. (Safety first! 🧑‍🍳)</li>
+                                <li style="color: #FAFAD2;">Be careful when the popcorn is popping, as it can get hot. (Hot popcorn alert! 🚨)</li>
+                                <li style="color: #FAFAD2;">You can adjust the amount of spices to your liking. If you don't like it too spicy, use less red chili powder. (Make it just how you like it! 👍)</li>
+                                <li style="color: #FAFAD2;">Have fun! Cooking is a great way to learn new things and make tasty treats. (Cooking adventures are the best! 🧑‍🍳🎉)</li>
+                            </ul>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="snacks">
+                    <div class="image-details-container">
+                        <img src="images/snacks/Cheesy-Nachos.png" alt="Cheesy Nachos">
+                        <div class="menu-details">
+                            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Cheesy Nachos</h3>
+                            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$8.50</p>
+                        </div>
+                    </div>
+                    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">Crispy chips loaded with melty cheese and your favorite toppings! 🧀🎉</p>
+                    <button class="read-view-btn">view...</button>
+                    <div class="full-desc" style="display: none;" >
+                        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #ffffff;">📈</strong> Super Easy! (Like building a tower of blocks! 🧱)</p>
+                        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #87CEEB;"> ⏱️</strong> About 10 minutes (Quick as a superhero changing costumes! 🦸)</p>
+                        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;"><strong style="color: #DA70D6;">🍳 </strong> About 5 minutes (Faster than a race car! 🏎️)</p>
+                        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #FFD700;">🍽️</strong> 2-3 people (Perfect for sharing with your besties! 👯)</p>
+                
+                        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong></p>
+                        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+                            <li style="color: #00ffff;">1 bag of tortilla chips (Crunchy and fun! 🥳)</li>
+                            <li style="color: #00ffff;">1 cup of shredded cheese (Melty and yummy! 😋)</li>
+                            <li style="color: #00ffff;">Toppings of your choice (Like salsa, jalapenos, or sour cream! 🍅🌶️)</li>
+                        </ul>
+                
+                        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;"><strong style="color: #FF69B4;">What You'll Need (Tools):</strong></p>
+                        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+                            <li style="color: #CD5C5C;">Oven-safe dish or plate (Like a superhero's base! 🦸‍♂️)</li>
+                            <li style="color: #CD5C5C;">Oven mitts (To keep your hands safe! 🧤)</li>
+                        </ul>
+                
+                        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong></p>
+                        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+                            <li style="color: #DC143C;"><strong>Preheat:</strong> Ask a grown-up to preheat the oven to 350°F (175°C). (Get the oven ready for action! 🔥)</li>
+                            <li style="color: #DC143C;"><strong>Layer:</strong> Spread the tortilla chips on the dish. Sprinkle the cheese over the chips. (Make a cheesy mountain! ⛰️)</li>
+                            <li style="color: #DC143C;"><strong>Melt:</strong> Put the dish in the oven for about 5 minutes, or until the cheese is melted. (Watch the cheese get all gooey! 🤩)</li>
+                            <li style="color: #DC143C;"><strong>Top:</strong> Take the dish out (carefully!) and add your favorite toppings. (Add the finishing touches! ✨)</li>
+                            <li style="color: #DC143C;"><strong>Enjoy:</strong> Let it cool a bit, then dig in! (Time to eat! 😋)</li>
+                        </ol>
+                
+                        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #FF69B4;">Important Tips:</strong></p>
+                        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+                            <li style="color: #FAFAD2;">Always ask a grown-up for help with the oven. (Safety first! 🧑‍🍳)</li>
+                            <li style="color: #FAFAD2;">Be careful, the dish will be hot! (Hot plate alert! 🚨)</li>
+                            <li style="color: #FAFAD2;">You can use any cheese you like. (Choose your favorite! 👍)</li>
+                            <li style="color: #FAFAD2;">Have fun adding different toppings! (Get creative! 🎨)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="snacks">
+                    <div class="image-details-container">
+                        <img src="images/snacks/Fruit-Skewers.png" alt="Fruit Skewers">
+                        <div class="menu-details">
+                            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Fruit Skewers</h3>
+                            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$6.00</p>
+                        </div>
+                    </div>
+                    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">Colorful and refreshing fruit on a stick! 🍓🍍🍇</p>
+                    <button class="read-view-btn">view...</button>
+                    <div class="full-desc" style="display: none;">
+                        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #98FB98;">📈</strong> Super Easy! (Like making a rainbow! 🌈)</p>
+                        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #87CEEB;"> ⏱️</strong> About 15 minutes (As fast as coloring a picture! 🖍️)</p>
+                        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;"><strong style="color: #DA70D6;">🍳 </strong> 0 minutes (No cooking needed! 😋)</p>
+                        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #FFD700;">🍽️</strong> 4 people (Enough for a fruity party! 🎉)</p>
+                
+                        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong></p>
+                        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+                            <li style="color: #00ffff;">Assorted fruits (Like strawberries, grapes, pineapple, and watermelon! 🍉🍓🍍)</li>
+                            <li style="color: #00ffff;">Wooden skewers (Like little fruit swords! 🗡️)</li>
+                        </ul>
+                
+                 <!-- Snacks end  here -->
+            </div>
+        </div>
+        
+        <div class="menu-item" data-category="snacks">
+            <div class="image-details-container">
+                <img src="images/snacks/Mini-Pizzas.png" alt="Mini Pizzas">
+                <div class="menu-details">
+                    <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Mini Pizzas</h3>
+                    <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$10.00</p>
+                </div>
+            </div>
+            <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">Personal-sized pizzas with all your favorite toppings! 🍕😋</p>
+            <button class="read-view-btn">view...</button>
+            <div class="full-desc" style="display: none;">
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #98FB98;">📈</strong> Easy! (Like playing with pizza dough! 🧑‍🍳)</p>
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #87CEEB;"> ⏱️</strong> About 20 minutes (Like setting up a fun game! 🎲)</p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;"><strong style="color: #DA70D6;">🍳 </strong> About 15 minutes (Just a little longer than your favorite TV show! 📺)</p>
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #FFD700;">🍽️</strong> 4 people (Enough for a pizza party with friends! 🎉)</p>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong></p>
+                <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #00ffff;">English muffins or mini pizza crusts (The base for your pizza! 🍕)</li>
+                    <li style="color: #00ffff;">Pizza sauce (The yummy red stuff! 🍅)</li>
+                    <li style="color: #00ffff;">Shredded cheese (Melty and delicious! 🧀)</li>
+                    <li style="color: #00ffff;">Toppings of your choice (Like pepperoni, veggies, or mushrooms! 🍄🫑)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;"><strong style="color: #FF69B4;">What You'll Need (Tools):</strong></p>
+                <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #CD5C5C;">Baking sheet (For baking your pizzas! 🕳️)</li>
+                    <li style="color: #CD5C5C;">Spoon (For spreading the sauce! 🥄)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong></p>
+                <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #DC143C;"><strong>Preheat:</strong> Ask a grown-up to preheat the oven to 400°F (200°C). (Get the oven ready for pizza time! 🔥)</li>
+                    <li style="color: #DC143C;"><strong>Prepare:</strong> If using English muffins, split them in half. (Get your pizza bases ready! 🍕)</li>
+                    <li style="color: #DC143C;"><strong>Sauce:</strong> Spread pizza sauce on each crust. (Add the yummy red base! 🍅)</li>
+                    <li style="color: #DC143C;"><strong>Cheese:</strong> Sprinkle shredded cheese over the sauce. (Make it cheesy! 🧀)</li>
+                    <li style="color: #DC143C;"><strong>Toppings:</strong> Add your favorite toppings. (Get creative with your pizza art! 🎨)</li>
+                    <li style="color: #DC143C;"><strong>Bake:</strong> Place the pizzas on a baking sheet and bake for 10-15 minutes, or until the cheese is melted and bubbly. (Bake until golden and delicious! 😋)</li>
+                    <li style="color: #DC143C;"><strong>Cool:</strong> Let them cool a bit before eating. (Hot pizza alert! 🚨)</li>
+                    <li style="color: #DC143C;"><strong>Enjoy:</strong> Time to eat your mini pizza masterpieces! (Yummy! 🥳)</li>
+                </ol>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #FF69B4;">Important Tips:</strong></p>
+                <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #FAFAD2;">Always ask a grown-up for help with the oven. (Safety first! 🧑‍🍳)</li>
+                    <li style="color: #FAFAD2;">You can use different kinds of cheese. (Try mozzarella, cheddar, or any cheese you like! 👍)</li>
+                    <li style="color: #FAFAD2;">Get creative with your toppings! (Make it your own! 🎨)</li>
+                    <li style="color: #FAFAD2;">Have fun making your mini pizzas! (Cooking adventures are the best! 🎉)</li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="menu-item" data-category="snacks">
+            <div class="image-details-container">
+                <img src="images/snacks/Veggie Sticks with Dip.png" alt="Veggie Sticks with Dip">
+                <div class="menu-details">
+                    <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Veggie Sticks with Dip</h3>
+                    <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$5.50</p>
+                </div>
+            </div>
+            <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">Healthy and crunchy veggies with a delicious dip! 🥕🥒🫑</p>
+            <button class="read-view-btn">view...</button>
+            <div class="full-desc" style="display: none;">
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #98FB98;">📈</strong> Super Easy! (Like playing with your favorite toys! 🧸)</p>
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #87CEEB;"> ⏱️</strong> About 10 minutes (As quick as getting ready for school! 🎒)</p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;"><strong style="color: #DA70D6;">🍳 </strong> 0 minutes (No cooking needed, yay! 🎉)</p>
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #FFD700;">🍽️</strong> 2 people (Perfect for an after-school snack! 🍎)</p>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong></p>
+                <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #00ffff;">Assorted veggies (Like carrots, cucumbers, bell peppers, and celery! 🥕🥒🫑)</li>
+                    <li style="color: #00ffff;">Dip of your choice (Like ranch dressing, hummus, or yogurt dip! 😋)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;"><strong style="color: #FF69B4;">What You'll Need (Tools):</strong></p>
+                <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #CD5C5C;">Knife (Ask a grown-up to help with this! 🔪)</li>
+                    <li style="color: #CD5C5C;">Cutting board (For cutting the veggies! 🗂️)</li>
+                    <li style="color: #CD5C5C;">Bowl (For serving the dip! 🥣)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong></p>
+                <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #DC143C;"><strong>Wash:</strong> Wash all the veggies. (Clean and fresh! 🧼)</li>
+                    <li style="color: #DC143C;"><strong>Cut:</strong> Ask a grown-up to help you cut the veggies into sticks or bite-sized pieces. (Make them easy to eat! 😋)</li>
+                    <li style="color: #DC143C;">**Serve:** Arrange the veggie sticks on a plate or in a bowl. (Make it look pretty! 🎨)</li>
+                    <li style="color: #DC143C;"><strong>Dip:</strong> Put your favorite dip in a bowl. (Dip time! 🥳)</li>
+                    <li style="color: #DC143C;"><strong>Enjoy:</strong> Dip the veggie sticks into the dip and enjoy! (Crunchy and yummy! 😋)</li>
+                </ol>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #FF69B4;">Important Tips:</strong></p>
+                <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #FAFAD2;">Always ask a grown-up for help with cutting the veggies. (Safety first! 🧑‍🍳)</li>
+                    <li style="color: #FAFAD2;">You can use any veggies you like. (Choose your favorites! 👍)</li>
+                    <li style="color: #FAFAD2;">Try different dips to find your favorite. (Explore new flavors! 🌍)</li>
+                    <li style="color: #FAFAD2;">Have fun snacking on your healthy veggies! (Healthy and happy! 😊)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="snacks">
+            <div class="image-details-container">
+                <img src="images/snacks/Veggie-Mini-Sandwiches.png" alt="Veggie Mini Sandwiches">
+                <div class="menu-details">
+                    <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Veggie Mini Sandwiches</h3>
+                    <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$8.00</p>
+                </div>
+            </div>
+            <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                These mini sandwiches are a healthy and fun way to eat veggies 🥒🍅, perfect for a mini picnic! 🧺
+            </p>
+            <button class="read-view-btn">view...</button>
+            <div class="full-desc" style="display: none;">
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #98FB98;">📈</strong> Super Duper Easy! (Like stacking blocks! 🧱)
+                </p>
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #87CEEB;"> ⏱️</strong> About 15 minutes (As fast as drawing a picture! 🖍️)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #DA70D6;">🍽️</strong> 3 people (Perfect for a mini picnic! 🧺)
+                </p>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+                </p>
+                <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #00ffff;">6 slices of bread (Your favorite kind! 🍞)</li>
+                    <li style="color: #00ffff;">Cream cheese or hummus (The yummy spread! 😋)</li>
+                    <li style="color: #00ffff;">Cucumber slices (Crunchy and cool! 🥒)</li>
+                    <li style="color: #00ffff;">Tomato slices (Juicy and red! 🍅)</li>
+                    <li style="color: #00ffff;">Lettuce leaves (Green and leafy! 🥬)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+                </p>
+                <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #CD5C5C;">A knife (Ask a grown-up to help! 🔪)</li>
+                    <li style="color: #CD5C5C;">A plate (For serving! 🍽️)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+                </p>
+                <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #DC143C;"><strong>Spread:</strong> Spread cream cheese or hummus on the bread. (Make it creamy! 🍦)</li>
+                    <li style="color: #DC143C;"><strong>Add Veggies:</strong> Add cucumber, tomato, and lettuce. (Stack them up! ⬆️)</li>
+                    <li style="color: #DC143C;"><strong>Cut:</strong> Ask a grown-up to cut the sandwiches into small triangles or squares.</li>
+                    <li style="color: #DC143C;"><strong>Serve:</strong> Arrange on a plate and enjoy! (Yummy and healthy! 💖)</li>
+                </ol>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Important Tips:</strong>
+                </p>
+                <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #FAFAD2;">You can use any veggies you like! (Get creative! 🎨)</li>
+                    <li style="color: #FAFAD2;">Make them colorful and fun! (Like a rainbow! 🌈)</li>
+                    <li style="color: #FAFAD2;">Perfect for lunchboxes or snack time.</li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="menu-item" data-category="snacks">
+            <div class="image-details-container">
+                <img src="images/snacks/Spicy-Potato-Wedges.png" alt="Spicy Potato Wedges">
+                <div class="menu-details">
+                    <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Spicy Potato Wedges</h3>
+                    <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$10.00</p>
+                </div>
+            </div>
+            <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">These wedges are a fun and spicy way to enjoy potatoes 🥔, perfect for a movie night snack! 🎥🍿</p>
+            <button class="read-view-btn">view...</button>
+            <div class="full-desc" style="display: none;">
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #98FB98;">📈</strong> Easy Peasy! (Like playing in the sandbox! 🏖️)</p>
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #87CEEB;"> ⏱️</strong>About 10 minutes (Quick like tying your shoes! 👟)</p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;"><strong style="color: #DA70D6;">🍳 </strong>About 20-25 minutes (Just a bit longer than a playground game! 🤸)</p>
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;"><strong style="color: #FFD700;">🍽️</strong>  3 people (Enough for your team! ⚽)</p>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong></p>
+                <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #00ffff;">2 medium potatoes (The yummy root veggies! 🥔)</li>
+                    <li style="color: #00ffff;">2 tablespoons olive oil (Makes them crispy! ✨)</li>
+                    <li style="color: #00ffff;">1 teaspoon paprika (Gives them a nice color! ❤️)</li>
+                    <li style="color: #00ffff;">1/2 teaspoon chili powder (A little spice! 🌶️)</li>
+                    <li style="color: #00ffff;">Salt and pepper (To taste! 🤏)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;"><strong style="color: #FF69B4;">What You'll Need (Tools):</strong></p>
+                <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #CD5C5C;">A baking sheet (Like a pizza pan! 🍕)</li>
+                    <li style="color: #CD5C5C;">A knife (Ask a grown-up to help! 🔪)</li>
+                    <li style="color: #CD5C5C;">A bowl (For mixing! 🥣)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong></p>
+                <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #DC143C;"><strong>Prep the Potatoes:</strong>  Ask a grown-up to help you wash and cut the potatoes into wedges. (Cut them into boat shapes! 🛥️)</li>
+                    <li style="color: #DC143C;"><strong>Season:</strong>Put the wedges in a bowl, add the oil, paprika, chili powder, salt, and pepper. (Mix it all up like magic! ✨)</li>
+                    <li style="color: #DC143C;"><strong>Bake:</strong> Put the wedges on the baking sheet and bake at 400°F (200°C) for 20-25 minutes, until golden and crispy. (Watch them turn yummy! 😋)</li>
+                    <li style="color: #DC143C;"><strong>Cool and Serve:</strong>Let them cool a bit, then enjoy! (Crispy and tasty! 💖)</li>
+                    
+                </ol>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;"><strong style="color: #FF69B4;">Important Tips:</strong></p>
+                <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #FAFAD2;">Always ask a grown-up for help with the oven and knife. (Safety first! 🧑‍🍳)</li>
+                    <li style="color: #FAFAD2;">You can add other spices you like! (Make it your own! 👍)</li>
+                    <li style="color: #FAFAD2;">These are great with ketchup or your favorite dip.</li>
+                 
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="snacks">
+            <div class="image-details-container">
+                <img src="images/snacks/Cheese-Garlic-Breadsticks.png" alt="Cheese Garlic Breadsticks">
+                <div class="menu-details">
+                    <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Cheese Garlic Breadsticks</h3>
+                    <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$12.00</p>
+                </div>
+            </div>
+            <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                These cheesy garlic breadsticks are a delicious and fun snack 🧄🧀, perfect for pizza night or any time! 🍕✨
+            </p>
+            <button class="read-view-btn">view...</button>
+            <div class="full-desc" style="display: none;">
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #98FB98;">📈</strong> Easy! (Like playing with dough! 🧑‍🍳)
+                </p>
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #87CEEB;"> ⏱️</strong> About 15 minutes (Quick like a song! 🎶)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #DA70D6;">🍳 </strong> About 10-12 minutes (Just a short wait! ⏳)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #FFD700;">🍽️</strong> 4 people (Enough for everyone! 🤗)
+                </p>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+                </p>
+                <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #00ffff;">1 package of refrigerated pizza dough (The stretchy base! 🍕)</li>
+                    <li style="color: #00ffff;">2 tablespoons butter, melted (Makes them golden! ✨)</li>
+                    <li style="color: #00ffff;">1 teaspoon garlic powder (Garlicky goodness! 🧄)</li>
+                    <li style="color: #00ffff;">1/2 cup shredded cheese (Melty and yummy! 🧀)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+                </p>
+                <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #CD5C5C;">A baking sheet (Like a pizza pan! 🍕)</li>
+                    <li style="color: #CD5C5C;">A brush (For brushing butter! 🖌️)</li>
+                    <li style="color: #CD5C5C;">A bowl.</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+                </p>
+                <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #DC143C;"><strong>Prep the Dough:</strong> Ask a grown-up to help you unroll the pizza dough and cut it into strips. (Make them into sticks! 🥢)</li>
+                    <li style="color: #DC143C;"><strong>Brush:</strong> Brush the melted butter on the breadsticks. (Make them shiny! ✨)</li>
+                    <li style="color: #DC143C;"><strong>Sprinkle:</strong> Sprinkle garlic powder and cheese on top. (Add the flavor magic! ✨)</li>
+                    <li style="color: #DC143C;"><strong>Bake:</strong> Bake at 400°F (200°C) for 10-12 minutes, until golden. (Watch them turn yummy! 😋)</li>
+                    <li style="color: #DC143C;"><strong>Cool and Serve:</strong> Let them cool a bit, then enjoy! (Cheesy and garlicky! 💖)</li>
+                </ol>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Important Tips:</strong>
+                </p>
+                <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #FAFAD2;">Always ask a grown-up for help with the oven. (Safety first! 🧑‍🍳)</li>
+                    <li style="color: #FAFAD2;">You can add other spices you like! (Make it your own! 👍)</li>
+                    <li style="color: #FAFAD2;">These are great with marinara sauce for dipping.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="snacks">
+            <div class="image-details-container">
+                <img src="images/snacks/Crispy-Onion-Rings.png" alt="Crispy Onion Rings">
+                <div class="menu-details">
+                    <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Crispy Onion Rings</h3>
+                    <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$9.00</p>
+                </div>
+            </div>
+            <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                These crispy onion rings are a fun and crunchy snack 🧅, perfect for parties or movie nights! 🎉🎥
+            </p>
+            <button class="read-view-btn">view...</button>
+            <div class="full-desc" style="display: none;">
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #98FB98;">📈</strong> Medium (Like a fun puzzle! 🧩)
+                </p>
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #87CEEB;"> ⏱️</strong> About 20 minutes (Like setting up a game! 🎲)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #DA70D6;">🍳 </strong> About 5-7 minutes per batch (Quick like a race! 🏁)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #FFD700;">🍽️</strong> 3 people (Enough to share! 🤗)
+                </p>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+                </p>
+                <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #00ffff;">1 large onion (The star of the show! 🧅)</li>
+                    <li style="color: #00ffff;">1 cup flour (For coating! ⚪)</li>
+                    <li style="color: #00ffff;">1 teaspoon paprika (For color and flavor! ❤️)</li>
+                    <li style="color: #00ffff;">1/2 teaspoon salt (A pinch of flavor! 🤏)</li>
+                    <li style="color: #00ffff;">1/2 cup milk (Makes them smooth! 🥛)</li>
+                    <li style="color: #00ffff;">Vegetable oil for frying.</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+                </p>
+                <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #CD5C5C;">A deep pan or pot (For frying! 🍲)</li>
+                    <li style="color: #CD5C5C;">A knife (Ask a grown-up to help! 🔪)</li>
+                    <li style="color: #CD5C5C;">Bowls (For dipping! 🥣)</li>
+                    <li style="color: #CD5C5C;">Slotted spoon.</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+                </p>
+                <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #DC143C;"><strong>Prep the Onions:</strong> Ask a grown-up to help you peel and slice the onion into rings. (Make them into circles! ⭕)</li>
+                    <li style="color: #DC143C;"><strong>Coat:</strong> Mix flour, paprika, and salt in a bowl. Dip the onion rings in milk, then in the flour mixture. (Make them coated! ⚪)</li>
+                    <li style="color: #DC143C;"><strong>Fry:</strong> Ask a grown-up to help you heat the oil. Fry the onion rings in batches until golden and crispy. (Watch them turn yummy! 😋)</li>
+                    <li style="color: #DC143C;"><strong>Cool and Serve:</strong> Place on paper towels to drain excess oil. Let them cool a bit, then enjoy! (Crunchy and tasty! 💖)</li>
+                </ol>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Important Tips:</strong>
+                </p>
+                <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #FAFAD2;">Always ask a grown-up for help with the hot oil. (Safety first! 🧑‍🍳)</li>
+                    <li style="color: #FAFAD2;">Be careful, the oil is very hot! (Hot oil alert! 🚨)</li>
+                    <li style="color: #FAFAD2;">These are great with ketchup or your favorite dip.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="snacks">
+            <div class="image-details-container">
+                <img src="images/snacks/Chili-Cheese-Toast.png" alt="Chili Cheese Toast">
+                <div class="menu-details">
+                    <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Chili Cheese Toast</h3>
+                    <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$6.00</p>
+                </div>
+            </div>
+            <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                This chili cheese toast is a quick and tasty snack 🌶️🧀, perfect for a cozy day! 🍞✨
+            </p>
+            <button class="read-view-btn">view...</button>
+            <div class="full-desc" style="display: none;">
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #98FB98;">📈</strong> Super Easy! (Like drawing a smiley face! 😊)
+                </p>
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #87CEEB;"> ⏱️</strong> About 5 minutes (As quick as counting to ten! 🔟)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #DA70D6;">🍳 </strong> About 5 minutes (Just a little warm-up! 🔥)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #FFD700;">🍽️</strong> 2 people (Perfect for sharing! 🤗)
+                </p>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+                </p>
+                <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #00ffff;">2 slices of bread (Your favorite kind! 🍞)</li>
+                    <li style="color: #00ffff;">2 tablespoons chili flakes (Just a pinch if you don't like it too spicy! 🌶️)</li>
+                    <li style="color: #00ffff;">2 tablespoons of shredded cheese (Melty and yummy! 🧀)</li>
+                    <li style="color: #00ffff;">1 tablespoon of butter (To make it golden! 🧈)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+                </p>
+                <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #CD5C5C;">A pan or toaster oven (For toasting! 🍞)</li>
+                    <li style="color: #CD5C5C;">A knife (Ask a grown-up to help! 🔪)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+                </p>
+                <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #DC143C;"><strong>Spread:</strong> Spread butter on the bread. (Make it buttery! 🧈)</li>
+                    <li style="color: #DC143C;"><strong>Sprinkle:</strong> Sprinkle chili flakes and cheese on top. (Add the flavor magic! ✨)</li>
+                    <li style="color: #DC143C;"><strong>Toast:</strong> Toast in a pan or toaster oven until the cheese is melted and bubbly. (Watch it melt! 🤩)</li>
+                    <li style="color: #DC143C;"><strong>Cool and Serve:</strong> Let it cool a bit, then enjoy! (Cheesy and spicy! 💖)</li>
+                </ol>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Important Tips:</strong>
+                </p>
+                <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #FAFAD2;">Always ask a grown-up for help with the toaster oven. (Safety first! 🧑‍🍳)</li>
+                    <li style="color: #FAFAD2;">You can use different kinds of cheese. (Choose your favorite! 👍)</li>
+                    <li style="color: #FAFAD2;">Control the amount of chili flakes for your spice preference.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="snacks">
+            <div class="image-details-container">
+                <img src="images/snacks/Mini-Quesadillas.png" alt="Mini Quesadillas">
+                <div class="menu-details">
+                    <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Mini Quesadillas</h3>
+                    <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$7.00</p>
+                </div>
+            </div>
+            <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                These mini quesadillas are a fun and customizable snack 🌯🧀, perfect for any time! 🎉✨
+            </p>
+            <button class="read-view-btn">view...</button>
+            <div class="full-desc" style="display: none;">
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #98FB98;">📈</strong> Easy! (Like folding a paper airplane! ✈️)
+                </p>
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #87CEEB;"> ⏱️</strong> About 10 minutes (Quick like a superhero change! 🦸)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #DA70D6;">🍳 </strong> About 5 minutes (Just a little flip! 🔄)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #FFD700;">🍽️</strong> 2 people (Perfect for a mini fiesta! 🎉)
+                </p>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+                </p>
+                <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #00ffff;">4 small tortillas (The wrap stars! 🌯)</li>
+                    <li style="color: #00ffff;">1/2 cup shredded cheese (Melty and yummy! 🧀)</li>
+                    <li style="color: #00ffff;">Toppings of your choice (Like cooked veggies or beans! 🫘🥕)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+                </p>
+                <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #CD5C5C;">A pan (For cooking! 🍳)</li>
+                    <li style="color: #CD5C5C;">A spatula (For flipping! 🔄)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+                </p>
+                <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #DC143C;"><strong>Fill:</strong> Sprinkle cheese and toppings on one half of each tortilla. (Make it cheesy! 🧀)</li>
+                    <li style="color: #DC143C;"><strong>Fold:</strong> Fold the other half over. (Make a half moon! 🌙)</li>
+                    <li style="color: #DC143C;"><strong>Cook:</strong> Cook in a pan over medium heat until golden and the cheese is melted. (Watch it melt! 🤩)</li>
+                    <li style="color: #DC143C;"><strong>Cut and Serve:</strong> Cut into triangles and enjoy! (Cheesy and delicious! 💖)</li>
+                </ol>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Important Tips:</strong>
+                </p>
+                <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #FAFAD2;">Always ask a grown-up for help with the stove. (Safety first! 🧑‍🍳)</li>
+                    <li style="color: #FAFAD2;">You can use different kinds of cheese. (Choose your favorite! 👍)</li>
+                    <li style="color: #FAFAD2;">Add any veggies you like.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="snacks">
+            <div class="image-details-container">
+                <img src="images/snacks/Stuffed-Mushroom-Caps.png" alt="Stuffed Mushroom Caps">
+                <div class="menu-details">
+                    <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Stuffed Mushroom Caps</h3>
+                    <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$10.00</p>
+                </div>
+            </div>
+            <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                These stuffed mushroom caps are a fancy and delicious snack 🍄🧀, perfect for a party! 🎉✨
+            </p>
+            <button class="read-view-btn">view...</button>
+            <div class="full-desc" style="display: none;">
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #98FB98;">📈</strong> Medium (Like building a LEGO castle! 🏰)
+                </p>
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #87CEEB;"> ⏱️</strong> About 15 minutes (Like setting up a fun game! 🎲)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #DA70D6;">🍳 </strong> About 20 minutes (Just a bit longer than a cartoon! 📺)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #FFD700;">🍽️</strong> 3 people (Enough to share! 🤗)
+                </p>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+                </p>
+                <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #00ffff;">12 mushroom caps (The little bowls! 🍄)</li>
+                    <li style="color: #00ffff;">1/4 cup breadcrumbs (For stuffing! 🍞)</li>
+                    <li style="color: #00ffff;">2 tablespoons of cream cheese.</li>
+                    <li style="color: #00ffff;">1 tablespoon of herbs.</li>
+                    <li style="color: #00ffff;">1/4 cup shredded cheese (Melty and yummy! 🧀)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+                </p>
+                <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #CD5C5C;">A baking sheet (For baking! 🕳️)</li>
+                    <li style="color: #CD5C5C;">A spoon (For stuffing! 🥄)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+                </p>
+                <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #DC143C;"><strong>Prepare:</strong> Clean the mushroom caps. (Make them clean! 🧼)</li>
+                    <li style="color: #DC143C;"><strong>Mix:</strong> Mix breadcrumbs, cream cheese, herbs, and cheese in a bowl. (Mix it up! 🥣)</li>
+                    <li style="color: #DC143C;"><strong>Stuff:</strong> Stuff the mushroom caps with the mixture. (Fill them up! 🍄)</li>
+                    <li style="color: #DC143C;"><strong>Bake:</strong> Bake at 375°F (190°C) for 20 minutes, until golden. (Watch them bake! 🤩)</li>
+                    <li style="color: #DC143C;"><strong>Cool and Serve:</strong> Let them cool a bit, then enjoy! (Yummy and stuffed! 💖)</li>
+                </ol>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Important Tips:</strong>
+                </p>
+                <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #FAFAD2;">Always ask a grown-up for help with the oven. (Safety first! 🧑‍🍳)</li>
+                    <li style="color: #FAFAD2;">You can use different fillings. (Get creative! 🎨)</li>
+                    <li style="color: #FAFAD2;">Use any herbs that you like.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="menu-item" data-category="snacks">
+            <div class="image-details-container">
+                <img src="images/snacks/Potato-Cheese-Balls.png" alt="Potato Cheese Balls">
+                <div class="menu-details">
+                    <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Potato Cheese Balls</h3>
+                    <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$8.00</p>
+                </div>
+            </div>
+            <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                These potato cheese balls are a fun and delicious snack 🥔🧀, perfect for any party! 🎉✨
+            </p>
+            <button class="read-view-btn">view...</button>
+            <div class="full-desc" style="display: none;">
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #98FB98;">📈</strong> Fun and Easy! (Like playing with playdough! 👐)
+                </p>
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #87CEEB;"> ⏱️</strong> About 20 minutes (Like setting up a fun game! 🎲)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #DA70D6;">🍳 </strong> About 5-7 minutes per batch (Quick like a race! 🏁)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #FFD700;">🍽️</strong> 3 people (Enough to share with your friends! 🤗)
+                </p>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+                </p>
+                <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #00ffff;">2 medium potatoes, boiled and mashed (The fluffy base! 🥔)</li>
+                    <li style="color: #00ffff;">1/2 cup shredded cheese (Melty and yummy! 🧀)</li>
+                    <li style="color: #00ffff;">1/4 cup breadcrumbs (For a crispy coat! 🍞)</li>
+                    <li style="color: #00ffff;">Salt and pepper to taste (Just a pinch! 🤏)</li>
+                    <li style="color: #00ffff;">Oil for frying (To make them golden! ✨)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+                </p>
+                <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #CD5C5C;">A pan (For frying! 🍳)</li>
+                    <li style="color: #CD5C5C;">Bowls (For mixing and coating! 🥣)</li>
+                    <li style="color: #CD5C5C;">A spoon (For scooping! 🥄)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+                </p>
+                <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #DC143C;"><strong>Mix:</strong> Mix the mashed potatoes, cheese, salt, and pepper in a bowl. (Combine the flavors! 😋)</li>
+                    <li style="color: #DC143C;"><strong>Shape:</strong> Shape the mixture into small balls. (Make them round! ⚪)</li>
+                    <li style="color: #DC143C;"><strong>Coat:</strong> Roll the balls in breadcrumbs. (Give them a crunchy coat! 🍞)</li>
+                    <li style="color: #DC143C;"><strong>Fry:</strong> Ask a grown-up to help you fry the balls in hot oil until golden brown. (Watch them turn crispy! 🤩)</li>
+                    <li style="color: #DC143C;"><strong>Cool and Serve:</strong> Let them cool a bit, then enjoy! (Cheesy and crispy! 💖)</li>
+                </ol>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Important Tips:</strong>
+                </p>
+                <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #FAFAD2;">Always ask a grown-up for help with frying. (Safety first! 🧑‍🍳)</li>
+                    <li style="color: #FAFAD2;">You can use different kinds of cheese. (Choose your favorite! 👍)</li>
+                    <li style="color: #FAFAD2;">Serve with ketchup or your favorite dip.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-item" data-category="snacks">
+            <div class="image-details-container">
+                <img src="images/snacks/Pav-Bhaji-Bruschetta.png" alt="Pav Bhaji Bruschetta">
+                <div class="menu-details">
+                    <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Pav Bhaji Bruschetta</h3>
+                    <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$9.00</p>
+                </div>
+            </div>
+            <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                This pav bhaji bruschetta is a fun and flavorful twist on a classic snack 🌶️🍞, perfect for a tasty treat! 🎉✨
+            </p>
+            <button class="read-view-btn">view...</button>
+            <div class="full-desc" style="display: none;">
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #98FB98;">📈</strong> Medium (Like a fun cooking adventure! 🧑‍🍳)
+                </p>
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+                    <strong style="color: #87CEEB;"> ⏱️</strong> About 15 minutes (Like setting up your art supplies! 🎨)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #DA70D6;">🍳 </strong> About 10 minutes (Just a little warm-up! 🔥)
+                </p>
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+                    <strong style="color: #FFD700;">🍽️</strong> 3 people (Enough for a tasty treat! 🤗)
+                </p>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+                </p>
+                <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #00ffff;">4 slices of bread (Your favorite type! 🍞)</li>
+                    <li style="color: #00ffff;">1 cup pav bhaji (The spicy veggie mix! 🌶️)</li>
+                    <li style="color: #00ffff;">1/4 cup chopped onions (For extra flavor! 🧅)</li>
+                    <li style="color: #00ffff;">1/4 cup chopped cilantro (For a fresh touch! 🌿)</li>
+                    <li style="color: #00ffff;">Butter (To make the bread crispy! 🧈)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+                </p>
+                <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #CD5C5C;">A pan (For toasting! 🍳)</li>
+                    <li style="color: #CD5C5C;">A knife (Ask a grown-up to help! 🔪)</li>
+                </ul>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+                </p>
+                <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #DC143C;"><strong>Toast:</strong> Butter the bread and toast it in a pan until golden brown. (Make it crispy! 🍞)</li>
+                    <li style="color: #DC143C;"><strong>Top:</strong> Top the toasted bread with pav bhaji, onions, and cilantro. (Add all the flavors! 😋)</li>
+                    <li style="color: #DC143C;"><strong>Serve:</strong> Serve warm and enjoy! (Spicy and tasty! 💖)</li>
+                </ol>
+        
+                <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+                    <strong style="color: #FF69B4;">Important Tips:</strong>
+                </p>
+                <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+                    <li style="color: #FAFAD2;">Always ask a grown-up for help with the stove. (Safety first! 🧑‍🍳)</li>
+                    <li style="color: #FAFAD2;">You can adjust the spices to your liking. (Make it just right! 👍)</li>
+                    <li style="color: #FAFAD2;">If you do not have pav bhaji, you can also use a thick tomato sauce with some added spices.</li>
+                </ul>
+            </div>
+        </div>
+<!-- Quick and easy  .....................................................-------------------------------------------000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-->     
+<div class="menu-item" data-category="quick-easy">
+    <div class="image-details-container">
+        <img src="images/snacks/Spicy-Potato-Wedges.png" alt="Spicy Potato Wedges">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Spicy Potato Wedges</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$7.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        These wedges are a fun and spicy way to enjoy potatoes 🥔, perfect for a movie night snack! 🎥🍿
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Easy Peasy! (Like playing in the sandbox! 🏖️)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 10 minutes (Quick like tying your shoes! 👟)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #DA70D6;">🍳 </strong> About 20-25 minutes (Just a bit longer than a playground game! 🤸)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 3 people (Enough for your team! ⚽)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">2 medium potatoes (The yummy root veggies! 🥔)</li>
+            <li style="color: #00ffff;">2 tablespoons olive oil (Makes them crispy! ✨)</li>
+            <li style="color: #00ffff;">1 teaspoon paprika (Gives them a nice color! ❤️)</li>
+            <li style="color: #00ffff;">1/2 teaspoon chili powder (A little spice! 🌶️)</li>
+            <li style="color: #00ffff;">Salt and pepper (To taste! 🤏)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A baking sheet (Like a pizza pan! 🍕)</li>
+            <li style="color: #CD5C5C;">A knife (Ask a grown-up to help! 🔪)</li>
+            <li style="color: #CD5C5C;">A bowl (For mixing! 🥣)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Prep the Potatoes:</strong> Ask a grown-up to help you wash and cut the potatoes into wedges. (Cut them into boat shapes! 🛥️)</li>
+            <li style="color: #DC143C;"><strong>Season:</strong> Put the wedges in a bowl, add the oil, paprika, chili powder, salt, and pepper. (Mix it all up like magic! ✨)</li>
+            <li style="color: #DC143C;"><strong>Bake:</strong> Put the wedges on the baking sheet and bake at 400°F (200°C) for 20-25 minutes, until golden and crispy. (Watch them turn yummy! 😋)</li>
+            <li style="color: #DC143C;"><strong>Cool and Serve:</strong> Let them cool a bit, then enjoy! (Crispy and tasty! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">Always ask a grown-up for help with the oven and knife. (Safety first! 🧑‍🍳)</li>
+            <li style="color: #FAFAD2;">You can add other spices you like! (Make it your own! 👍)</li>
+            <li style="color: #FAFAD2;">These are great with ketchup or your favorite dip.</li>
+        </ul>
+    </div>
+</div>
+<div class="menu-item" data-category="quick-easy">
+    <div class="image-details-container">
+        <img src="images/snacks/Veggie-Mini-Sandwiches.png" alt="Veggie Mini Sandwiches">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Veggie Mini Sandwiches</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$6.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        These mini sandwiches are a healthy and fun way to eat veggies 🥒🍅, perfect for a mini picnic! 🧺✨
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Super Duper Easy! (Like stacking blocks! 🧱)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 15 minutes (As fast as drawing a picture! 🖍️)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 3 people (Perfect for a mini picnic! 🧺)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">6 slices of bread (Your favorite kind! 🍞)</li>
+            <li style="color: #00ffff;">Cream cheese or hummus (The yummy spread! 😋)</li>
+            <li style="color: #00ffff;">Cucumber slices (Crunchy and cool! 🥒)</li>
+            <li style="color: #00ffff;">Tomato slices (Juicy and red! 🍅)</li>
+            <li style="color: #00ffff;">Lettuce leaves (Green and leafy! 🥬)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A knife (Ask a grown-up to help! 🔪)</li>
+            <li style="color: #CD5C5C;">A plate.</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Spread:</strong> Spread cream cheese or hummus on the bread. (Make it creamy! 🍦)</li>
+            <li style="color: #DC143C;"><strong>Add Veggies:</strong> Add cucumber, tomato, and lettuce. (Stack them up! ⬆️)</li>
+            <li style="color: #DC143C;"><strong>Cut:</strong> Ask a grown-up to cut the sandwiches into small triangles or squares.</li>
+            <li style="color: #DC143C;"><strong>Serve:</strong> Arrange on a plate and enjoy! (Yummy and healthy! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">You can use any veggies you like! (Get creative! 🎨)</li>
+            <li style="color: #FAFAD2;">Make them colorful and fun! (Like a rainbow! 🌈)</li>
+            <li style="color: #FAFAD2;">Perfect for lunchboxes or snack time.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu-item" data-category="quick-easy">
+    <div class="image-details-container">
+        <img src="images/snacks/Cheese-Garlic-Breadsticks.png" alt="Cheese Garlic Breadsticks">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Cheese Garlic Breadsticks</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$12.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        These cheesy garlic breadsticks are a delicious and fun snack 🧄🧀, perfect for pizza night or any time! 🍕✨
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Easy! (Like playing with dough! 🧑‍🍳)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 15 minutes (Quick like a song! 🎶)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #DA70D6;">🍳 </strong> About 10-12 minutes (Just a short wait! ⏳)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 4 people (Enough for everyone! 🤗)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">1 package of refrigerated pizza dough (The stretchy base! 🍕)</li>
+            <li style="color: #00ffff;">2 tablespoons butter, melted (Makes them golden! ✨)</li>
+            <li style="color: #00ffff;">1 teaspoon garlic powder (Garlicky goodness! 🧄)</li>
+            <li style="color: #00ffff;">1/2 cup shredded cheese (Melty and yummy! 🧀)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A baking sheet (Like a pizza pan! 🍕)</li>
+            <li style="color: #CD5C5C;">A brush (For brushing butter! 🖌️)</li>
+            <li style="color: #CD5C5C;">A bowl.</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Prep the Dough:</strong> Ask a grown-up to help you unroll the pizza dough and cut it into strips. (Make them into sticks! 🥢)</li>
+            <li style="color: #DC143C;"><strong>Brush:</strong> Brush the melted butter on the breadsticks. (Make them shiny! ✨)</li>
+            <li style="color: #DC143C;"><strong>Sprinkle:</strong> Sprinkle garlic powder and cheese on top. (Add the flavor magic! ✨)</li>
+            <li style="color: #DC143C;"><strong>Bake:</strong> Bake at 400°F (200°C) for 10-12 minutes, until golden. (Watch them turn yummy! 😋)</li>
+            <li style="color: #DC143C;"><strong>Cool and Serve:</strong> Let them cool a bit, then enjoy! (Cheesy and garlicky! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">Always ask a grown-up for help with the oven. (Safety first! 🧑‍🍳)</li>
+            <li style="color: #FAFAD2;">You can add other spices you like! (Make it your own! 👍)</li>
+            <li style="color: #FAFAD2;">These are great with marinara sauce for dipping.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu-item" data-category="quick-easy">
+    <div class="image-details-container">
+        <img src="images/snacks/Crispy-Onion-Rings.png" alt="Crispy Onion Rings">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Crispy Onion Rings</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$9.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        These crispy onion rings are a fun and crunchy snack 🧅, perfect for parties or movie nights! 🎉✨
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Medium (Like a fun puzzle! 🧩)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 20 minutes (Like setting up a game! 🎲)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #DA70D6;">🍳 </strong> About 5-7 minutes per batch (Quick like a race! 🏁)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 3 people (Enough to share! 🤗)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">1 large onion (The star of the show! 🧅)</li>
+            <li style="color: #00ffff;">1 cup flour (For coating! ⚪)</li>
+            <li style="color: #00ffff;">1 teaspoon paprika (For color and flavor! ❤️)</li>
+            <li style="color: #00ffff;">1/2 teaspoon salt (A pinch of flavor! 🤏)</li>
+            <li style="color: #00ffff;">1/2 cup milk (Makes them smooth! 🥛)</li>
+            <li style="color: #00ffff;">Vegetable oil for frying.</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A deep pan or pot (For frying! 🍲)</li>
+            <li style="color: #CD5C5C;">A knife (Ask a grown-up to help! 🔪)</li>
+            <li style="color: #CD5C5C;">Bowls (For dipping! 🥣)</li>
+            <li style="color: #CD5C5C;">Slotted spoon.</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Prep the Onions:</strong> Ask a grown-up to help you peel and slice the onion into rings. (Make them into circles! ⭕)</li>
+            <li style="color: #DC143C;"><strong>Coat:</strong> Mix flour, paprika, and salt in a bowl. Dip the onion rings in milk, then in the flour mixture. (Make them coated! ⚪)</li>
+            <li style="color: #DC143C;"><strong>Fry:</strong> Ask a grown-up to help you heat the oil. Fry the onion rings in batches until golden and crispy. (Watch them turn yummy! 😋)</li>
+            <li style="color: #DC143C;"><strong>Cool and Serve:</strong> Place on paper towels to drain excess oil. Let them cool a bit, then enjoy! (Crunchy and tasty! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">Always ask a grown-up for help with the hot oil. (Safety first! 🧑‍🍳)</li>
+            <li style="color: #FAFAD2;">Be careful, the oil is very hot! (Hot oil alert! 🚨)</li>
+            <li style="color: #FAFAD2;">These are great with ketchup or your favorite dip.</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="menu-item" data-category="quick-easy">
+    <div class="image-details-container">
+        <img src="images/snacks/Chili-Cheese-Toast.png" alt="Chili Cheese Toast">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Chili Cheese Toast</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$6.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        This chili cheese toast is a quick and tasty snack 🌶️🧀, perfect for a cozy day! 🍞✨
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Super Easy! (Like drawing a smiley face! 😊)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 5 minutes (As quick as counting to ten! 🔟)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #DA70D6;">🍳 </strong> About 5 minutes (Just a little warm-up! 🔥)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 2 people (Perfect for sharing! 🤗)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">2 slices of bread (Your favorite kind! 🍞)</li>
+            <li style="color: #00ffff;">2 tablespoons chili flakes (Just a pinch if you don't like it too spicy! 🌶️)</li>
+            <li style="color: #00ffff;">2 tablespoons of shredded cheese (Melty and yummy! 🧀)</li>
+            <li style="color: #00ffff;">1 tablespoon of butter (To make it golden! 🧈)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A pan or toaster oven (For toasting! 🍞)</li>
+            <li style="color: #CD5C5C;">A knife (Ask a grown-up to help! 🔪)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Spread:</strong> Spread butter on the bread. (Make it buttery! 🧈)</li>
+            <li style="color: #DC143C;"><strong>Sprinkle:</strong> Sprinkle chili flakes and cheese on top. (Add the flavor magic! ✨)</li>
+            <li style="color: #DC143C;"><strong>Toast:</strong> Toast in a pan or toaster oven until the cheese is melted and bubbly. (Watch it melt! 🤩)</li>
+            <li style="color: #DC143C;"><strong>Cool and Serve:</strong> Let it cool a bit, then enjoy! (Cheesy and spicy! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">Always ask a grown-up for help with the toaster oven. (Safety first! 🧑‍🍳)</li>
+            <li style="color: #FAFAD2;">You can use different kinds of cheese. (Choose your favorite! 👍)</li>
+            <li style="color: #FAFAD2;">Control the amount of chili flakes for your spice preference.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu-item" data-category="quick-easy">
+    <div class="image-details-container">
+        <img src="images/snacks/Mini-Veggie-Quesadillas.png" alt="Mini Veggie Quesadillas">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Mini Veggie Quesadillas</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$7.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        These mini quesadillas are a fun and customizable snack 🌯🧀, perfect for any time! 🎉✨
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Easy! (Like folding a paper airplane! ✈️)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 10 minutes (Quick like a superhero change! 🦸)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #DA70D6;">🍳 </strong> About 5 minutes (Just a little flip! 🔄)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 2 people (Perfect for a mini fiesta! 🎉)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">4 small tortillas (The wrap stars! 🌯)</li>
+            <li style="color: #00ffff;">1/2 cup shredded cheese (Melty and yummy! 🧀)</li>
+            <li style="color: #00ffff;">Toppings of your choice (Like cooked veggies or beans! 🫘🥕)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A pan (For cooking! 🍳)</li>
+            <li style="color: #CD5C5C;">A spatula (For flipping! 🔄)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Fill:</strong> Sprinkle cheese and toppings on one half of each tortilla. (Make it cheesy! 🧀)</li>
+            <li style="color: #DC143C;"><strong>Fold:</strong> Fold the other half over. (Make a half moon! 🌙)</li>
+            <li style="color: #DC143C;"><strong>Cook:</strong> Cook in a pan over medium heat until golden and the cheese is melted. (Watch it melt! 🤩)</li>
+            <li style="color: #DC143C;"><strong>Cut and Serve:</strong> Cut into triangles and enjoy! (Cheesy and delicious! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">Always ask a grown-up for help with the stove. (Safety first! 🧑‍🍳)</li>
+            <li style="color: #FAFAD2;">You can use different kinds of cheese. (Choose your favorite! 👍)</li>
+            <li style="color: #FAFAD2;">Add any veggies you like.</li>
+        </ul>
+    </div>
+</div>
+<!--.>........>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>           Vegetarian start here ....................................>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+
+<div class="menu-item" data-category="vegetarian">
+    <div class="image-details-container">
+        <img src="images/snacks/Vegetable-Stir-Fry.png" alt="Vegetable Stir-Fry">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Vegetable Stir-Fry</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$8.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        This vegetable stir-fry is a quick and healthy meal 🥕🌈, perfect for a busy day! 🍳✨
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Easy and Fun! (Like mixing colors in a painting! 🎨)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 15 minutes (Like getting your toys ready for playtime! 🧸)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #DA70D6;">🍳 </strong> About 10 minutes (Quick like a race! 🏁)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 2 people (Perfect for sharing with a friend! 🤗)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">1 cup mixed vegetables (Like carrots, broccoli, and peppers! 🥕🥦🫑)</li>
+            <li style="color: #00ffff;">1 tablespoon soy sauce (For a yummy flavor! 😋)</li>
+            <li style="color: #00ffff;">1 tablespoon oil (To make it sizzle! 🔥)</li>
+            <li style="color: #00ffff;">1 teaspoon ginger (A little zing! ✨)</li>
+            <li style="color: #00ffff;">1 clove garlic (For extra flavor! 🧄)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A pan or wok (For stir-frying! 🍳)</li>
+            <li style="color: #CD5C5C;">A spoon (For stirring! 🥄)</li>
+            <li style="color: #CD5C5C;">A knife (Ask a grown-up to help! 🔪)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Prep the Veggies:</strong> Ask a grown-up to help you wash and chop the vegetables. (Make them bite-sized! 😋)</li>
+            <li style="color: #DC143C;"><strong>Sauté:</strong> Heat the oil in the pan and add the ginger and garlic. (Make it smell good! 👃)</li>
+            <li style="color: #DC143C;"><strong>Add Veggies:</strong> Add the vegetables and stir-fry for a few minutes. (Watch them get colorful! 🌈)</li>
+            <li style="color: #DC143C;"><strong>Season:</strong> Add the soy sauce and stir-fry for a few view minutes. (Add the flavor magic! ✨)</li>
+            <li style="color: #DC143C;"><strong>Serve:</strong> Serve warm and enjoy! (Yummy and healthy! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">Always ask a grown-up for help with the stove. (Safety first! 🧑‍🍳)</li>
+            <li style="color: #FAFAD2;">You can use any vegetables you like. (Get creative! 🎨)</li>
+            <li style="color: #FAFAD2;">Serve over rice or noodles for a complete meal.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu-item" data-category="vegetarian">
+    <div class="image-details-container">
+        <img src="images/snacks/Lentil-Soup.png" alt="Lentil Soup">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Lentil Soup</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$10.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        This lentil soup is a warm and comforting meal ✨🍲, perfect for a chilly day! ❄️💖
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Easy and Cozy! (Like reading a favorite book! 📖)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 10 minutes (Quick like setting the table! 🍽️)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #DA70D6;">🍳 </strong> About 30 minutes (Just a little longer than a cartoon! 📺)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 3 people (Enough for a family meal! 👨‍👩‍👧‍👦)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">1 cup lentils (The little soup stars! ✨)</li>
+            <li style="color: #00ffff;">4 cups vegetable broth (The liquid base! 💧)</li>
+            <li style="color: #00ffff;">1 carrot, chopped (Orange and crunchy! 🥕)</li>
+            <li style="color: #00ffff;">1 onion, chopped (For extra flavor! 🧅)</li>
+            <li style="color: #00ffff;">1 teaspoon cumin (A warm spice! 💛)</li>
+            <li style="color: #00ffff;">Salt and pepper to taste (Just a pinch! 🤏)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A pot (For cooking! 🍲)</li>
+            <li style="color: #CD5C5C;">A spoon (For stirring! 🥄)</li>
+            <li style="color: #CD5C5C;">A knife (Ask a grown-up to help! 🔪)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Sauté:</strong> Ask a grown-up to help you sauté the onion and carrot in a pot. (Make them soft! 🧅🥕)</li>
+            <li style="color: #DC143C;"><strong>Add Lentils:</strong> Add the lentils, vegetable broth, cumin, salt, and pepper. (Combine the flavors! 😋)</li>
+            <li style="color: #DC143C;"><strong>Simmer:</strong> Bring to a boil, then reduce heat and simmer for 30 minutes, until the lentils are soft. (Watch them get tender! 🤩)</li>
+            <li style="color: #DC143C;"><strong>Serve:</strong> Serve warm and enjoy! (Warm and comforting! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">Always ask a grown-up for help with the stove. (Safety first! 🧑‍🍳)</li>
+            <li style="color: #FAFAD2;">You can add other vegetables you like. (Get creative! 🎨)</li>
+            <li style="color: #FAFAD2;">Serve with bread for dipping.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu-item" data-category="vegetarian">
+    <div class="image-details-container">
+        <img src="images/snacks/Falafel-Wraps.png" alt="Falafel Wraps">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Falafel Wraps</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$11.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        These falafel wraps are a fun and flavorful meal 🧆🌯, perfect for a picnic or lunchbox! 🎉✨
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Fun and Easy! (Like building a sandwich! 🥪)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 20 minutes (Like setting up a fun project! 🛠️)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 2 people (Perfect for a tasty lunch! 😋)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">Falafel balls (You can buy them or make them! 🧆)</li>
+            <li style="color: #00ffff;">2 tortillas or pita bread (The wrap stars! 🌯)</li>
+            <li style="color: #00ffff;">Hummus (The creamy spread! 🍦)</li>
+            <li style="color: #00ffff;">Lettuce and tomato (For a fresh touch! 🥬🍅)</li>
+            <li style="color: #00ffff;">Tzatziki sauce (If you want extra flavor!)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A pan or microwave (To warm the falafel! 🔥)</li>
+            <li style="color: #CD5C5C;">A plate.</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Warm Falafel:</strong> Warm the falafel balls according to package instructions. (Make them warm and ready! 🔥)</li>
+            <li style="color: #DC143C;"><strong>Spread:</strong> Spread hummus on the tortillas or pita bread. (Make it creamy! 🍦)</li>
+            <li style="color: #DC143C;"><strong>Add Falafel:</strong> Add the falafel balls, lettuce, and tomato. (Fill them up! 🌯)</li>
+            <li style="color: #DC143C;"><strong>Wrap:</strong> Roll up the tortillas or pita bread. (Make a yummy wrap! 🌯)</li>
+            <li style="color: #DC143C;"><strong>Serve:</strong> Serve and enjoy! (Tasty and filling! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">You can add other vegetables you like. (Get creative! 🎨)</li>
+            <li style="color: #FAFAD2;">Tzatziki sauce is a great addition!</li>
+            <li style="color: #FAFAD2;">If you are making the falafel yourself, always ask for adult supervision.</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="menu-item" data-category="vegetarian">
+    <div class="image-details-container">
+        <img src="images/snacks/Chickpea-Curry.png" alt="Chickpea Curry">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Chickpea Curry</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$10.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        This chickpea curry is a tasty and easy meal ✨🍲, perfect for a cozy dinner! ❄️💖
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Easy and Yummy! (Like mixing colorful paints! 🎨)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 15 minutes (Like getting your toys ready for fun! 🧸)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #DA70D6;">🍳 </strong> About 25 minutes (Just a little longer than a cartoon! 📺)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 3 people (Enough for a family dinner! 👨‍👩‍👧‍👦)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">1 can of chickpeas, drained and rinsed (The little stars of the curry! ✨)</li>
+            <li style="color: #00ffff;">1 onion, chopped (For extra flavor! 🧅)</li>
+            <li style="color: #00ffff;">1 can of diced tomatoes (Juicy and red! 🍅)</li>
+            <li style="color: #00ffff;">1 teaspoon curry powder (The magic spice! 💛)</li>
+            <li style="color: #00ffff;">1/2 teaspoon cumin (A warm spice! 🧡)</li>
+            <li style="color: #00ffff;">Vegetable broth (To make it saucy! 💧)</li>
+            <li style="color: #00ffff;">Rice for serving (The perfect side! 🍚)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A pot (For cooking the curry! 🍲)</li>
+            <li style="color: #CD5C5C;">A spoon (For stirring! 🥄)</li>
+            <li style="color: #CD5C5C;">A knife (Ask a grown-up to help! 🔪)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Sauté:</strong> Ask a grown-up to help you cook the onion in a pot until it's soft. (Make it smell good! 👃)</li>
+            <li style="color: #DC143C;"><strong>Add:</strong> Add the chickpeas, diced tomatoes, curry powder, and cumin. (Combine the flavors! 😋)</li>
+            <li style="color: #DC143C;"><strong>Simmer:</strong> Add vegetable broth and let it simmer for 25 minutes. (Watch it get thick and yummy! 🤩)</li>
+            <li style="color: #DC143C;"><strong>Serve:</strong> Serve warm with rice and enjoy! (Warm and flavorful! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">Always ask a grown-up for help with the stove. (Safety first! 🧑‍🍳)</li>
+            <li style="color: #FAFAD2;">You can add other vegetables you like, like spinach or bell peppers. (Get creative! 🎨)</li>
+            <li style="color: #FAFAD2;">If you like spicy foods, you can add a pinch of chili flakes.</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="menu-item" data-category="vegetarian">
+    <div class="image-details-container">
+        <img src="images/snacks/Stuffed-Bell-Peppers.png" alt="Stuffed Bell Peppers">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Stuffed Bell Peppers</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$10.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        These stuffed bell peppers are a healthy and delicious meal 🫑🍚, perfect for a colorful dinner! 🌈✨
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Medium (Like a fun puzzle! 🧩)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 20 minutes (Like setting up a fun project! 🛠️)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #DA70D6;">🍳 </strong> About 30 minutes (Just a little longer than a movie! 🍿)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 3 people (Enough to share! 🤗)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">3 bell peppers (The colorful bowls! 🫑)</li>
+            <li style="color: #00ffff;">1 cup cooked rice (The filling base! 🍚)</li>
+            <li style="color: #00ffff;">1/2 cup cooked veggies (Like peas and carrots! 🥕)</li>
+            <li style="color: #00ffff;">1/4 cup shredded cheese (Melty and yummy! 🧀)</li>
+            <li style="color: #00ffff;">Tomato sauce (To add some moisture! 🍅)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A baking dish (For baking! 🕳️)</li>
+            <li style="color: #CD5C5C;">A spoon (For stuffing! 🥄)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Prepare:</strong> Cut the tops off the bell peppers and remove the seeds. (Make them ready for stuffing! 🫑)</li>
+            <li style="color: #DC143C;"><strong>Mix:</strong> Mix the rice, veggies, and cheese in a bowl. (Combine the flavors! 😋)</li>
+            <li style="color: #DC143C;"><strong>Stuff:</strong> Stuff the bell peppers with the mixture. (Fill them up! 🫑)</li>
+            <li style="color: #DC143C;"><strong>Sauce:</strong> Pour tomato sauce over the stuffed peppers. (Add some extra flavor! 🍅)</li>
+            <li style="color: #DC143C;"><strong>Bake:</strong> Bake at 375°F (190°C) for 30 minutes, until the peppers are tender. (Watch them bake! 🤩)</li>
+            <li style="color: #DC143C;"><strong>Cool and Serve:</strong> Let them cool a bit, then enjoy! (Yummy and stuffed! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">Always ask a grown-up for help with the oven. (Safety first! 🧑‍🍳)</li>
+            <li style="color: #FAFAD2;">You can use different fillings. (Get creative! 🎨)</li>
+            <li style="color: #FAFAD2;">You can use different colors of bell peppers.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu-item" data-category="vegetarian">
+    <div class="image-details-container">
+        <img src="images/snacks/Spinach-Ricotta-Lasagna.png" alt="Spinach and Ricotta Lasagna">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Spinach and Ricotta Lasagna</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$14.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        This spinach and ricotta lasagna is a warm and comforting meal 🍝💖, perfect for a special dinner! 🌟✨
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Medium (Like building a tall tower! 🗼)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 25 minutes (Like getting all your building blocks ready! 🧱)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #DA70D6;">🍳 </strong> About 45 minutes (Just a bit longer than a long movie! 🎬)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 4 people (Enough for a family feast! 🍽️)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">Lasagna noodles (The layered pasta! 🍝)</li>
+            <li style="color: #00ffff;">Ricotta cheese (The creamy filling! 🤍)</li>
+            <li style="color: #00ffff;">Spinach, cooked and chopped (The green goodness! 🥬)</li>
+            <li style="color: #00ffff;">Tomato sauce (The red base! 🍅)</li>
+            <li style="color: #00ffff;">Shredded mozzarella cheese (Melty and yummy! 🧀)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A baking dish (For baking the lasagna! 🕳️)</li>
+            <li style="color: #CD5C5C;">A spoon (For spreading the layers! 🥄)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Layer:</strong> Layer lasagna noodles, ricotta cheese mixed with spinach, and tomato sauce in the baking dish. (Build the layers! 🏗️)</li>
+            <li style="color: #DC143C;"><strong>Top:</strong> Top with mozzarella cheese. (Make it cheesy! 🧀)</li>
+            <li style="color: #DC143C;"><strong>Bake:</strong> Bake at 375°F (190°C) for 45 minutes, until golden and bubbly. (Watch it get yummy! 🤩)</li>
+            <li style="color: #DC143C;"><strong>Cool and Serve:</strong> Let it cool a bit, then enjoy! (Cheesy and layered! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">Always ask a grown-up for help with the oven. (Safety first! 🧑‍🍳)</li>
+            <li style="color: #FAFAD2;">You can use different kinds of cheese. (Choose your favorite! 👍)</li>
+            <li style="color: #FAFAD2;">If you don't have fresh spinach, frozen spinach works well too.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu-item" data-category="vegetarian">
+    <div class="image-details-container">
+        <img src="images/snacks/Vegetable-Biryani.png" alt="Vegetable Biryani">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Vegetable Biryani</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$13.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        This vegetable biryani is a flavorful and aromatic rice dish 🍚✨, perfect for a festive meal! 🌟🎉
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Medium and Flavorful! (Like building a colorful tower of rice! 🍚)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 20 minutes (Like setting up a fun building project! 🏗️)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #DA70D6;">🍳 </strong> About 30 minutes (Just a bit longer than a long game! 🎮)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 4 people (Enough for a family feast! 🍽️)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">1 cup basmati rice (The long and fluffy rice! 🍚)</li>
+            <li style="color: #00ffff;">Mixed vegetables (Like carrots, peas, and beans! 🥕)</li>
+            <li style="color: #00ffff;">1 onion, sliced (For extra flavor! 🧅)</li>
+            <li style="color: #00ffff;">Spices (Like cardamom, cloves, and cinnamon! ✨)</li>
+            <li style="color: #00ffff;">Yogurt (To make it creamy! 🥛)</li>
+            <li style="color: #00ffff;">Saffron (Optional, for color and flavor!)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A pot (For cooking the biryani! 🍲)</li>
+            <li style="color: #CD5C5C;">A spoon (For stirring! 🥄)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Sauté:</strong> Ask a grown-up to help you cook the onion and spices in a pot. (Make it smell fragrant! 👃)</li>
+            <li style="color: #DC143C;"><strong>Add:</strong> Add the vegetables and yogurt. (Combine the flavors! 😋)</li>
+            <li style="color: #DC143C;"><strong>Layer:</strong> Layer the rice and vegetable mixture in the pot. (Build the layers! 🏗️)</li>
+            <li style="color: #DC143C;"><strong>Cook:</strong> Cook on low heat until the rice is done. (Watch it get fluffy! 🤩)</li>
+            <li style="color: #DC143C;"><strong>Serve:</strong> Serve warm and enjoy! (Flavorful and colorful! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">Always ask a grown-up for help with the stove. (Safety first! 🧑‍🍳)</li>
+            <li style="color: #FAFAD2;">You can use any vegetables you like. (Get creative! 🎨)</li>
+            <li style="color: #FAFAD2;">Garnish with cilantro and mint for a fresh touch.</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="menu-item" data-category="vegetarian">
+    <div class="image-details-container">
+        <img src="images/snacks/Vegetable-Korma.png" alt="Vegetable Korma">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Vegetable Korma</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$11.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        This vegetable korma is a mild and creamy dish 🌰🥕, perfect for a comforting meal! 🍲✨
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Medium and Mild! (Like making a gentle and creamy soup! 🥣)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 20 minutes (Like getting your ingredients ready for a cooking adventure! 🧑‍🍳)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #DA70D6;">🍳 </strong> About 30 minutes (Just a bit longer than a story time! 📖)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 3 people (Enough for a cozy dinner! 🤗)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">Mixed vegetables (Like potatoes, carrots, and peas! 🥔🥕)</li>
+            <li style="color: #00ffff;">1 onion, chopped (For extra flavor! 🧅)</li>
+            <li style="color: #00ffff;">Cashews (To make it creamy! 🌰)</li>
+            <li style="color: #00ffff;">Yogurt or cream (To make it smooth! 🥛)</li>
+            <li style="color: #00ffff;">Spices (Like cardamom and cinnamon! ✨)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A pot (For cooking the korma! 🍲)</li>
+            <li style="color: #CD5C5C;">A spoon (For stirring! 🥄)</li>
+            <li style="color: #CD5C5C;">A blender (Ask a grown up to help!)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Sauté:</strong> Ask a grown-up to help you cook the onion and spices in a pot. (Make it smell warm! 👃)</li>
+            <li style="color: #DC143C;"><strong>Blend:</strong> Blend cashews with yogurt or cream to make a smooth paste.</li>
+            <li style="color: #DC143C;"><strong>Add:</strong> Add the vegetables and cashew paste to the pot. (Combine the flavors! 😋)</li>
+            <li style="color: #DC143C;"><strong>Simmer:</strong> Simmer until the vegetables are tender. (Watch it get creamy! 🤩)</li>
+            <li style="color: #DC143C;"><strong>Serve:</strong> Serve warm with rice or naan and enjoy! (Mild and creamy! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">Always ask a grown-up for help with the stove and blender. (Safety first! 🧑‍🍳)</li>
+            <li style="color: #FAFAD2;">You can use any vegetables you like. (Get creative! 🎨)</li>
+            <li style="color: #FAFAD2;">Garnish with chopped nuts for a crunchy touch.</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="menu-item" data-category="vegetarian">
+    <div class="image-details-container">
+        <img src="images/snacks/Paneer-Butter-Masala.png" alt="Paneer Butter Masala">
+        <div class="menu-details">
+            <h3 style="color: #d9ff00; font-family: 'Comic Sans MS', cursive; font-size: 30px;">Paneer Butter Masala</h3>
+            <p class="price" style="color: #00CED1; font-family: 'Comic Sans MS', monospace; font-size: 21px;">$12.00</p>
+        </div>
+    </div>
+    <p class="menu-desc short-desc" style="color: #ffffff; font-family: 'Comic Sans MS', serif; font-size: 20px;">
+        This paneer butter masala is a rich and creamy dish 🧈✨, perfect for a special dinner! 🍴🌟
+    </p>
+    <button class="read-view-btn">view...</button>
+    <div class="full-desc" style="display: none;">
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #98FB98;">📈</strong> Medium and Creamy! (Like making a yummy painting with lots of colors! 🎨)
+        </p>
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 16px;">
+            <strong style="color: #87CEEB;"> ⏱️</strong> About 20 minutes (Like getting all your art supplies ready! 🖌️)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #DA70D6;">🍳 </strong> About 30 minutes (Just a bit longer than your favorite cartoon! 📺)
+        </p>
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 16px;">
+            <strong style="color: #FFD700;">🍽️</strong> 3 people (Enough for a family dinner! 👨‍👩‍👧‍👦)
+        </p>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Ingredients):</strong>
+        </p>
+        <ul style="font-family: 'Tahoma', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #00ffff;">200g paneer, cut into cubes (The yummy cheese! 🧀)</li>
+            <li style="color: #00ffff;">1 onion, chopped (For extra flavor! 🧅)</li>
+            <li style="color: #00ffff;">1 can of diced tomatoes (Juicy and red! 🍅)</li>
+            <li style="color: #00ffff;">2 tablespoons butter (To make it creamy! 🧈)</li>
+            <li style="color: #00ffff;">1 teaspoon garam masala (The magic spice mix! ✨)</li>
+            <li style="color: #00ffff;">Cream (To make it extra smooth! 🥛)</li>
+            <li style="color: #00ffff;">Cashews (optional, for extra richness!)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">What You'll Need (Tools):</strong>
+        </p>
+        <ul style="font-family: 'Book Antiqua', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #CD5C5C;">A pan (For cooking the curry! 🍳)</li>
+            <li style="color: #CD5C5C;">A spoon (For stirring! 🥄)</li>
+            <li style="color: #CD5C5C;">A knife (Ask a grown-up to help! 🔪)</li>
+        </ul>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Let's Make It! (Instructions):</strong>
+        </p>
+        <ol style="font-family: 'Comic Sans MS', serif; font-size: 14px; text-align: justify;">
+            <li style="color: #DC143C;"><strong>Sauté:</strong> Ask a grown-up to help you cook the onion in butter until it's soft. (Make it smell good! 👃)</li>
+            <li style="color: #DC143C;"><strong>Add:</strong> Add the diced tomatoes, garam masala, and cashews. (Combine the flavors! 😋)</li>
+            <li style="color: #DC143C;"><strong>Simmer:</strong> Add paneer and cream. Let it simmer for 20 minutes. (Watch it get thick and creamy! 🤩)</li>
+            <li style="color: #DC143C;"><strong>Serve:</strong> Serve warm with naan or rice and enjoy! (Creamy and delicious! 💖)</li>
+        </ol>
+
+        <p style="font-family: 'Comic Sans MS', sans-serif; font-size: 20px;">
+            <strong style="color: #FF69B4;">Important Tips:</strong>
+        </p>
+        <ul style="font-family: 'Comic Sans MS', sans-serif; font-size: 14px; text-align: justify;">
+            <li style="color: #FAFAD2;">Always ask a grown-up for help with the stove. (Safety first! 🧑‍🍳)</li>
+            <li style="color: #FAFAD2;">You can adjust the spices to your liking. (Make it just right! 👍)</li>
+            <li style="color: #FAFAD2;">If you like a sweeter sauce, add a pinch of sugar.</li>
+        </ul>
+    </div>
+</div>
+
+        <script>
+            // search button code
+            // Search Button Functionality
+document.getElementById('search-btn').addEventListener('click', function() {
+    const query = document.getElementById('search-input').value.toLowerCase();
+    const recipes = document.querySelectorAll('.menu-item');
+    const resultsContainer = document.getElementById('recipe-results');
+    const notification = document.getElementById('notification');
+    const closeButton = document.getElementById('close-btn');
+    
+    // Clear previous results
+    resultsContainer.innerHTML = '';
+    let found = false;
+
+    recipes.forEach(recipe => {
+        const cardText = recipe.innerText.toLowerCase();
+
+        if (cardText.includes(query)) {
+            found = true;
+            // Clone recipe card and append to results
+            const clone = recipe.cloneNode(true);
+            resultsContainer.appendChild(clone);
+        }
+    });
+
+    // Show or hide notification based on search results
+    if (!found) {
+        notification.style.display = 'block';
+    } else {
+        notification.style.display = 'none';
+    }
+
+    // Show the close button after search is triggered
+    closeButton.style.display = 'inline-block';
+});
+
+// Close Button Functionality
+document.getElementById('close-btn').addEventListener('click', function() {
+    document.getElementById('search-input').value = ''; // Clear the input field
+    document.getElementById('recipe-results').innerHTML = ''; // Clear search results
+    document.getElementById('notification').style.display = 'none'; // Hide notification
+    this.style.display = 'none'; // Hide the close button
+});
+
+// search button end here ...............................................
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const readviewBtns = document.querySelectorAll('.read-view-btn');
+        
+                readviewBtns.forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        const menuItem = btn.parentElement;
+                        const shortDesc = menuItem.querySelector('.short-desc');
+                        const fullDesc = menuItem.querySelector('.full-desc');
+        
+                        if (fullDesc.style.display === 'none') {
+                            shortDesc.style.display = 'none';
+                            fullDesc.style.display = 'block';
+                            btn.textContent = 'Less...';
+                        } else {
+                            shortDesc.style.display = 'block';
+                            fullDesc.style.display = 'none';
+                            btn.textContent = 'view...';
+                        }
+                    });
+                });
+            });
+        </script>
+
+    <script>
+        const buttons = document.querySelectorAll('.category-btn');
+        const items = document.querySelectorAll('.menu-item');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+                items.forEach(item => {
+                    const category = item.getAttribute('data-category')?.trim();
+                    if (filter === 'all' || category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // read view button sound hover
+        document.addEventListener('DOMContentLoaded', function() {
+        const readviewBtns = document.querySelectorAll('.read-view-btn');
+        const sheepSound = document.getElementById('sheepSound');
+
+        readviewBtns.forEach(function(btn) {
+            btn.addEventListener('mouseenter', function() {
+                sheepSound.currentTime = 0;
+                sheepSound.play();
+            });
+        });
+    });
+    </script>
+</body>
+</html>
+
+<style>
+    
+   /* search button*/
+   .search-container {
+    display: flex;
+    justify-content: center;
+    margin-right: -320px;
+    width: 250px;
+    gap: 20px;
+}
+
+#search-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50px;
+}
+
+#search-btn, #close-btn {
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#search-btn:hover {
+    background-color: #FF1493; /* Slightly darker pink */
+}
+
+#close-btn:hover {
+    background-color: darkred; /* Darker red for hover effect */
+}
+
+#notification {
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.recipe-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.category-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.category-btn {
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s;
+}
+
+.category-btn:hover {
+    background-color: #FF69B4;
+    color: white;
+}
+/* end here */
+
+/* read view  */
+.read-view-btn {
+    background: goldenrod;
+    color: black;
+    font-weight: normal;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    height: 40px;
+    text-align: inherit;
+    font-size: 1.3rem;
+    transition: 0.3s;
+    box-shadow: 0 6px 10px rgba(255, 255, 0, 0.3);
+    width: 110px;
+}
+
+.read-view-btn:hover {
+    transform: scale(1.05); /* Make it slightly bigger */
+    box-shadow: 0 8px 12px rgba(255, 255, 0, 0.5); /* Change the shadow */
+}
+/* Menu Section */
+.menu-section {
+    text-align: center;
+    padding: 50px 5%;
+    position: relative;
+    
+}
+
+.menu-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* Grid Layout */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 30px; /* Increased gap for better spacing */
+    padding: 30px; /* Increased padding */
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5%; /* Adjusted margin */
+    margin-right: 5%; /* Adjusted margin */
+}
+
+/* Vertical Center Divider */
+.menu-grid::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: white;
+}
+
+/* Menu Item Layout */
+.menu-item {
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start of the container */
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        width: 600px;
+        height: auto;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: sans-serif;
+    }
+
+    .menu-item .image-details-container { /* New container for image, details, price */
+        display: flex;
+        align-items: center; /* Align items vertically in the center */
+        width: 100%; /* Take full width */
+    }
+
+/* Menu Image */
+ .menu-item img {
+        width: 100px; /* Adjust image size */
+        height: 100px;
+        border-radius: 50%; /* Make it round */
+        object-fit: cover; /* Make image cover the space */
+        margin-right: 15px; /* Add space between image and details */
+    }
+
+/* Name & Price Side by Side */
+.menu-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-grow: 1; /* Allow details to take up remaining space */
+    }
+
+    .menu-details h3 {
+        margin: 0;
+    }
+
+    .menu-details .price {
+        margin: 0;
+        color: #888;
+    }
+
+    .menu-desc {
+        width: 100%; /* Take full width */
+        margin-top: 10px; /* Add space between details and description */
+    }
+/* Scroll Animation */
+/* When visible, they fade in and move up */
+.menu-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Description also fades in */
+.menu-item.show .menu-desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Image zoom effect */
+.menu-item.show img {
+    transform: scale(1.05);
+}
+
+/* 📱 Mobile & Tablet Optimizations */
+@media (max-width: 1024px) {
+    .menu-grid {
+        grid-template-columns: 1fr; /* Single column on smaller devices */
+    }
+
+    .menu-grid::after {
+        display: none; /* Remove divider */
+    }
+
+    .menu-item {
+        flex-direction: column; /* Stack items */
+        text-align: center;
+    }
+
+    .menu-details {
+        flex-direction: column;
+    }
+
+    .menu-desc {
+        text-align: center;
+    }
+}
+
+/* Larger Screens (Desktops, Laptops) */
+@media (min-width: 1200px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for wide screens */
+    }
+}
+</style>

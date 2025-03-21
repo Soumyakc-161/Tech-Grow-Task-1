@@ -1,0 +1,1442 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* General Reset */
+body {
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+/* top bar setting icon*/
+.fa-solid.fa-gear {
+    margin-left: 430px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .popup-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 20px;
+  }
+  
+  .popup-content {
+    text-align: left;
+  }
+  
+  .close-btn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: red;
+  }
+  
+  .close-btn:hover {
+    color: darkred;
+  }
+  
+
+/* Responsive Top Bar */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 130%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    font-size: 14px;
+    gap: 20px;
+    z-index: 1000;
+    margin-left: -131px;
+   
+}
+.top-bar .search {
+    font-size: 20px; /* Icon size */
+    color: white; /* Icon color */
+    margin-left: 450px;
+}
+
+.top-bar .search:hover {
+    color: #FF69B4; /* Icon changes color on hover */
+}
+
+/* Individual Elements */
+.top-bar div {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Keeps icon and text close */
+}
+
+/* search button */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-right: -320px;
+}
+
+#search-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-btn, #close-btn {
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 150px;
+}
+
+#search-btn:hover {
+    background-color: #FF1493; /* Slightly darker pink */
+}
+/* Close Button */
+#close-bg-menu {
+    padding: 8px 15px;
+    border: none;
+    background: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+#close-bg-menu:hover {
+    background: darkred;
+}
+#close-btn:hover {
+    background-color: darkred; /* Darker red for hover effect */
+}
+#notification {
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.recipe-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Responsive Fix */
+@media (max-width: 1000px) {
+    .top-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 20px;
+        gap: 15px;
+    }
+}
+/* Sticky Navbar */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 3px;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: background 0.5s ease-in-out;
+    z-index: 999;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Navbar Changes on Scroll */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.8); /* 40% opacity when scrolling */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 130px;
+    border-radius: 50%;
+    transition: 0.5s ease;
+}
+
+.logo:hover img {
+    transform: rotate(10deg);
+}
+
+
+.navbar .logo h2 {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 45px; /* Adjust size if needed */
+    font-weight: normal; /* Ensure natural look */
+}
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    transition: color 0.3s ease, font-family 0.3s ease;
+}
+
+/* Icons Section */
+.nav-icons {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    padding-right: 20px;
+}
+
+.nav-icons i {
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.nav-icons i:hover {
+    transform: scale(1.3) rotate(10deg);
+    color: yellow;
+}
+
+
+/* Magic Wand Hover Effect */
+body.wand-active {
+    cursor: crosshair;
+}
+
+/* Navbar Changes on Hover */
+.navbar:hover .logo img {
+    content: url('images/logo.png'); /* Change logo on hover */
+}
+
+.navbar:hover .nav-links a {
+    font-family: 'Courier New', monospace;
+    color: cyan;
+}
+/* side bar css end here,,,,,,,,,,,,,,,,,,,,,,,,,,,,*/
+
+/*.....................................................................................................................................*/
+
+/*.....................................................................................................................................*/
+
+/*.....................................................................................................................................*/
+
+
+
+/* Hero Stats & Buttons */
+/* Responsive Hero Stats & Buttons */
+/* Hero Actions */
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 50px 20px; /* Adjusted padding */
+    background: #00000017;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Slightly larger to cover blur overflow */
+    height: 110%;
+    background: url('images/hero-slider-1.jpg');
+    background-size: 2000px;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(0px); /* Adjust for visibility */
+    opacity: 0.6; /* Reduces intensity */
+    z-index: -1; /* Keeps it behind text */
+}
+
+
+/* Hero Heading */
+.hero h1 {
+    font-family: 'Poppins', sans-serif; /* Change to a more attractive font family */
+    font-size: 3rem;
+    font-weight: bold;
+    animation: slideIn 2s ease-in-out, fadeIn 2s ease-in-out; /* Add slide and fade animation */
+}
+
+/* Highlighted Words */
+.hero h1 span {
+    color: yellow;
+    animation: pulse 1.5s infinite; /* Add animation to highlighted words */
+}
+
+/* Subheading */
+.hero p {
+    font-family: 'Open Sans', sans-serif; /* Change to a more attractive font family */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 2s ease-in-out; /* Add fade animation */
+    gap: 10px;
+}
+
+
+.hero-content .highlight {
+    color: #00A6FF;
+    font-family: Poppins;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    z-index: 1; /* Ensure hero-content stays on top */
+}
+
+/* Hero Actions (Boxes + Buttons) */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Space between sections */
+    margin-top: 150px;
+    margin-right: 250px;
+
+}
+
+/* Left Side - Boxes */
+.hero-left {
+    display: flex;
+    gap: 50px; /* Space between boxes */
+    flex-wrap: wrap;
+}
+/* Box and Box-1 Styling */
+.box, .box-1 {
+    background: rgb(54, 53, 53); /* For .box */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 150px;
+    height: 190px;
+    flex: 1 1 calc(33.33% - 20px); /* Flex-basis for responsiveness */
+    max-width: 150px;
+    margin: 10px; /* Uniform spacing */
+    margin-top: -350px;
+}
+
+.box img, .box-1 img {
+    width: 100%; /* Full width inside the box */
+    height: auto;
+    border-radius: 10px;
+}
+
+.box p, .box-1 p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: white; /* Adjust font size for better readability on small screens */
+}
+
+/* Hero Image Styling */
+.hero-img {
+    width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+    z-index: 1;
+}
+
+/* Right Side - Buttons */
+.hero-right {
+    display: flex;
+    gap: -80px; /* Space between buttons */
+    margin-top: -410px;
+    margin-left: -100;
+    flex-wrap: wrap;
+}
+
+/* Button Styling */
+.hero-right button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap; /* Prevents text from breaking */
+    width: 170px;
+    text-align: center;
+    height: 50px;  
+    margin-left: 120px;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+/* Watch Button Styling */
+.watch-video {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: -140px;
+}
+
+.watch-video:hover {
+    background-color: gold;
+    transform: scale(1.05); /* Subtle hover effect */
+}
+/* Order Now Button */
+.order-btn {
+    background-color: #7293ff;
+    color: white;
+}
+/* Liquid Animation */
+.hero-right button .liquid {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: #7293ff;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    transition: 0.6s;
+}
+
+.hero-right button .liquid::after,
+.hero-right button .liquid::before {
+    position: absolute;
+    content: "";
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: 0;
+    transform: translate(-25%, -75%);
+}
+
+.hero-right button .liquid::after {
+    border-radius: 45%;
+    background: rgba(20, 20, 20, 1);
+    box-shadow: 0 0 10px 5px #7293ff, inset 0 0 5px #7293ff;
+    animation: animate 5s linear infinite;
+    opacity: 0.8;
+}
+
+.hero-right button .liquid::before {
+    border-radius: 40%;
+    box-shadow: 0 0 10px rgba(26, 26, 26, 0.5),
+        inset 0 0 5px rgba(26, 26, 26, 0.5);
+    background: rgba(26, 26, 26, 0.5);
+    animation: animate 7s linear infinite;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+
+@keyframes animate {
+    0% {
+        transform: translate(-25%, -75%) rotate(0);
+    }
+    100% {
+        transform: translate(-25%, -75%) rotate(360deg);
+    }
+}
+
+/* Hover Effect */
+.hero-right button:hover .liquid {
+    top: -120px;
+}
+
+.hero-right button:hover {
+    box-shadow: 0 0 5px #7293ff, inset 0 0 5px #7293ff;
+    transition-delay: 0.2s;
+}
+
+/* Hero Image Animation */
+.hero-img {
+    width: 210px;
+    height: auto;
+    animation: bounce 2s infinite;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: -120px;
+}
+
+
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* Responsive Design - Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    .hero {
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+        height: 1380px;
+    }
+    .hero-content {
+        order: 1; /* Ensure content appears first */
+    }
+    .hero-img {
+        order: 2;
+        width: 250px; /* Adjust width for tablets */
+        margin-bottom: -20px;
+        margin-top: 40px;
+    }
+    .hero-actions {
+        order: 3;
+        flex-direction: column; /* Stack hero actions vertically */
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .box {
+        order: 4;
+        margin-bottom: 10px;
+        width: 100%; /* Ensure full width for tablets */
+        margin-top: -15px;
+        
+    }
+    .box-1 {
+        order: 5;
+        margin-bottom: 20px;
+        width: 100%; /* Ensure full width for tablets */
+        margin-right: -90px;
+        margin-top: -15px;
+       
+    }
+    .watch-video {
+        order: 6;
+        margin-left: -50px;
+        margin-top: -220px;
+    }
+}
+
+/* Responsive Design - Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 20px 10px; /* Compact padding for smaller screens */
+    }
+    .hero-img {
+        width: 150px; /* Smaller hero image */
+        margin-bottom: 15px;
+    }
+    .hero-actions {
+        gap: 10px; /* Reduced spacing */
+        flex-direction: column; /* Ensure vertical stack */
+    }
+    .box img,
+    .box-1 img {
+        height: 80px; /* Adjusted height for mobile */
+    }
+    .box, 
+    .box-1 {
+        width: 100%; /* Full width for boxes */
+        margin: 10px auto; /* Center-align boxes */
+    }
+    .watch-video {
+        font-size: 0.8rem;
+        padding: 8px 10px; /* Compact button design */
+    }
+}
+
+/* Extreme Small Screens (max-width: 320px) */
+@media (max-width: 320px) {
+    .hero h1 {
+        font-size: 1.2rem; /* Smaller font for headings */
+    }
+    .hero p {
+        font-size: 0.8rem; /* Reduced paragraph font size */
+    }
+    .box p,
+    .box-1 p {
+        font-size: 0.8rem; /* Smaller text for boxes */
+    }
+    .box,
+    .box-1 {
+        width: 100%; /* Full width for boxes */
+        margin-bottom: 10px; /* Compact margin for small screens */
+    }
+}
+
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+
+
+
+/* About Section */
+/* Our Story Section */
+.our-story {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: url('images/about--bg.png') no-repeat center/cover;
+    padding: 80px 100px;
+    position: relative;
+    top:50px;
+    margin-left: -50px;
+}
+
+/* Left Content */
+.story-content {
+    width: 100%;
+    color: white;
+    font-family: 'Poppins', sans-serif; /* Modern & Elegant Font */
+    margin-left: 30px;
+    margin-top: -150px;
+}
+
+/* Heading Styling */
+.story-content h2 {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5); /* Soft Glow Effect */
+    animation: glowingText 1.5s infinite alternate ease-in-out;
+}
+
+/* Subheading */
+.story-content h3 {
+    color: yellow;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+/* Paragraph Styling */
+.story-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 500px;
+    text-align: justify;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInText 1.5s ease-out 0.5s forwards;
+}
+
+.story-content h4 {
+    color: yellow;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+/* Animation for glowing text */
+@keyframes glowingText {
+    0% {
+        text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: 2px 2px 20px rgba(255, 255, 255, 1);
+    }
+}
+
+/* Fade In Text Animation */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Right Side (Images) */
+.story-image {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main Dish */
+.main-dish {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Dish Container */
+.dish-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotate 20s linear infinite;
+    transform-origin: center;
+}
+
+/* Individual Dishes */
+.dish {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    transition: transform 0.3s ease-in-out;
+}
+
+.dish:hover {
+    transform: scale(1.1);
+}
+
+/* Rotation Animation */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Dish Positions */
+.dish-top-left { top: 5%; left: 20%; }
+.dish-top-right { top: 5%; right: 20%; }
+.dish-middle-left { top: 35%; left: 2%; }
+.dish-middle-right { top: 35%; right: 2%; }
+.dish-bottom-left { top: 65%; left: 5%; }
+.dish-bottom-right { top: 65%; right: 7%; }
+
+/* Dish Detail Card - Centered */
+.dish-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 370px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: black;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    z-index: 10;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Visible Class (Shows Card with Animation) */
+.dish-card.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Card Inner Content */
+.dish-card-content {
+    position: relative;
+}
+
+/* Title Styling */
+.dish-card h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #becb09;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Description */
+.dish-card p {
+    font-size: 17px;
+    color: #ebebeb;
+    line-height: 1.6;
+}
+
+/* Button Styling */
+.dish-card button {
+    margin-top: 15px;
+    padding: 12px 18px;
+    border: none;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.dish-card button:hover {
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(255, 75, 75, 0.4);
+}
+
+/* Hidden Class (For Closing Effect) */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+    .our-story {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+    }
+
+    .story-content {
+        width: 90%;
+        text-align: center;
+    }
+
+    .story-content h2 {
+        font-size: 40px;
+    }
+
+    .story-image {
+        width: 350px;
+        height: 350px;
+    }
+
+    .main-dish {
+        width: 280px;
+        height: 280px;
+    }
+
+    .dish {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* 📱 Mobile Adjustments */
+@media (max-width: 768px) {
+    .story-content {
+        width: 100%;
+    }
+
+    .story-image {
+        width: 280px;
+        height: 280px;
+    }
+
+    .main-dish {
+        width: 220px;
+        height: 220px;
+    }
+
+    .dish {
+        width: 50px;
+        height: 50px;
+    }
+
+    .story-content h2 {
+        font-size: 32px;
+    }
+
+    .story-content h3 {
+        font-size: 20px;
+    }
+
+    .story-content p {
+        font-size: 14px;
+    }
+}
+
+/* popup menu for a Dish */
+
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+
+
+
+/* Menu Section start here */
+/* Menu Card Container */
+/* Menu Section */
+.section.menu {
+    padding: 50px 20px;
+    text-align: center;
+    background: url('images/menu-background-img.png') no-repeat center center/cover;
+    
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Grid List */
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Two columns per row */
+    gap: 20px 10px; /* Vertical & Horizontal spacing */
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+   width: 1300px;
+}
+
+/* Menu Card */
+.menu-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid gold;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 70%;
+    align-items: center;
+    margin-left: 25%;
+}
+
+.menu-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Image Styling */
+.card-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    padding: 15px;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+  
+}
+
+.card-banner img {
+    width: 380%;
+    height: 155%;
+    border-radius: 5%;
+   
+}
+
+/* Title & Price */
+.title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+}
+
+.title-2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: gold;
+    margin-top: 5px;
+}
+
+/* Description */
+.card-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 10px;
+}
+
+/* Menu Timing */
+.menu-text {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: white;
+}
+
+/* Button */
+.btn-primary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    background: gold;
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid-list {
+        grid-template-columns: 1fr; /* Single column layout on mobile */
+    }
+}
+
+/*save to favorites */
+/* Favorite Heart Icon */
+.favorite-icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: #000; /* Default color */
+    transition: color 0.3s;
+}
+
+.favorite-icon.liked {
+    color: red; /* Turn red when liked */
+}
+
+
+.favorite-icon.saved {
+    color: red; /* Change color when saved */
+}
+
+/* Popup Notification */
+.popup {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    font-size: 14px;
+}
+
+/* end*/
+
+/* Container Styling */
+.category-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: black;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: fit-content;
+    margin: auto;
+}
+
+/* Button Styling */
+.category-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    text-transform: capitalize;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    transition: 0.3s ease;
+    outline: none;
+}
+
+/* Button Hover Effect */
+.category-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 1);
+}
+
+/* Image inside Button */
+.category-btn img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+    border: 2px solid cyan;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .category-container {
+        flex-direction: column;
+    }
+}
+
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+
+
+
+
+
+
+
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+
+/* Customer Reviews */
+.customer-reviews {
+    text-align: center;
+    padding: 50px 5%;
+    background: url('images/') no-repeat center center/cover;
+   
+}
+
+.customer-reviews h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Grid Layout */
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 120px;
+    justify-content: center;
+    margin-top: 20px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}   
+
+/* Review Box - Aligned Image to Left */
+.review {
+    background: black;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;  /* Align text to left */
+    border: 2px solid rgb(255, 255, 255);
+    display: flex;  /* Align image & content side-by-side */
+    align-items: center;
+    gap: 15px; /* Space between image and text */
+}
+
+/* Left-Aligned Image */
+.review img {
+    width: 120px;  /* Bigger size */
+    height: 120px;
+    border-radius: 50%;
+    flex-shrink: 0; /* Prevents image from shrinking */
+}
+
+/* Review Content */
+.review-content {
+    flex: 1; /* Take up remaining space */
+}
+
+/* Star Rating */
+.stars {
+    font-size: 1rem;
+    color: gold;
+}
+
+/* 📱 Mobile & Tablet Adjustments */
+@media (max-width: 768px) {
+    .reviews-container {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        width: 90%;
+    }
+
+    .review {
+        flex-direction: column; /* Stack image and content */
+        text-align: center;
+        padding: 15px;
+    }
+
+    .review img {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Wider Screens (Desktops & Laptops) */
+@media (min-width: 1024px) {
+    .reviews-container {
+        width: 60%; /* Keeps a balanced width */
+    }
+}
+
+/*.................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+
+
+
+
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+/*.....................................................................................................................................*/
+
+/* Contact Section */
+
+.contact-section {
+    padding: 80px 0;
+    font-family: 'Quicksand', sans-serif;
+    background: black url(images/contact-background-img.png) no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    transition: background 0.5s ease-in-out;
+}
+
+
+
+.contact-section h2 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    width: 500px;
+    margin: auto;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background: #222;
+    color: white;
+    text-align: center;
+}
+
+.clock-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: black;
+    border-radius: 50%;
+    border: 5px solid yellow;
+    margin: auto;
+    cursor: pointer;
+}
+
+.clock-number {
+    position: absolute;
+    color: yellow;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+}
+
+.clock-number[data-hour="12"] { top: 10%; left: 50%; }
+.clock-number[data-hour="3"] { top: 50%; left: 90%; }
+.clock-number[data-hour="6"] { top: 90%; left: 50%; }
+.clock-number[data-hour="9"] { top: 50%; left: 10%; }
+
+.clock-hand {
+    position: absolute;
+    width: 5px;
+    height: 50px;
+    background: yellow;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(0deg);
+}
+
+.minute-hand {
+    height: 70px;
+    background: red;
+}
+
+button {
+    background: yellow;
+    color: black;
+    font-weight: bold;
+    padding: 10px 90px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: 0.3s;
+    box-shadow: 0 6px 10px rgba(255, 255, 0, 0.3);
+}
+
+button:hover {
+    background: white;
+    transform: scale(1.1);
+}
+/* contact form footer  animation*/
+/* Footer */
+/* Footer */
+footer {
+    position: relative;
+    width: 100%;
+    min-height: 200px; /* Increased height */
+    padding: 20px 50px;
+    background:url(images/menu-background-img.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+/* Social Icons */
+.social_icon {
+    position: absolute;
+    bottom: 70px; /* Positioned inside the waves */
+    display: flex;
+    gap: 20px;
+}
+
+.social_icon li {
+    list-style: none;
+}
+
+.social_icon li a {
+    font-size: 2rem;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.social_icon li a:hover {
+    transform: translateY(-10px);
+    color: #ffdd57;
+}
+
+/* Footer Menu */
+.footer-menu {
+    position: absolute;
+    bottom: 40px; /* Positioned inside the waves */
+    display: flex;
+    gap: 20px;
+}
+
+.footer-menu li {
+    list-style: none;
+}
+
+.footer-menu li a {
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-menu li a:hover {
+    color: #ffdd57;
+}
+
+/* Footer Text */
+.footer-text {
+    position: absolute;
+    bottom: 10px; /* Positioned near bottom */
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Order Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="confirmationMessage" class="confirmation hidden"></div>
+    
+    <div class="background">
+        <div class="container">
+            <div class="avatar"></div>
+            <h2>Order Your Special Meal</h2>
+            <form id="orderForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required></textarea>
+
+                <label for="meal">Meal:</label>
+                <select id="meal" name="meal" required>
+                    <option value="pizza">Pizza</option>
+                    <option value="burger">Burger</option>
+                    <option value="sushi">Sushi</option>
+                    <option value="pasta">Pasta</option>
+                </select>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required>
+
+                <label for="instructions">Special Instructions:</label>
+                <textarea id="instructions" name="instructions"></textarea>
+
+                <button id="order-button" type="submit">Place Order</button>
+
+<!-- Payment Modal -->
+<div id="paymentModal" class="modal hidden">
+    <div class="modal-content">
+        <h2>Select Payment Method</h2>
+        <button id="online-payment">Online Payment</button>
+        <button id="cash-on-delivery">Cash on Delivery</button>
+    </div>
+</div>
+
+<!-- Order Confirmation Message -->
+<div id="confirmationMessage" class="hidden"></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(function () {
+        $("#orderForm").on("submit", function (event) {
+            event.preventDefault();
+            let button = $("#order-button");
+
+            button.addClass("sending").text("Processing...");
+
+            setTimeout(function () {
+                button.addClass("sent").text("Ordered");
+            }, 2600);
+
+            setTimeout(function () {
+                $("#paymentModal").removeClass("hidden"); // Show payment modal
+            }, 3500);
+        });
+
+        // Handle Payment Selection
+        $("#online-payment").click(function () {
+            alert("Redirecting to payment gateway...");
+            completeOrder();
+        });
+
+        $("#cash-on-delivery").click(function () {
+            alert("Cash on delivery selected.");
+            completeOrder();
+        });
+
+        function completeOrder() {
+            let name = $("#name").val();
+            let meal = $("#meal").val();
+            let quantity = $("#quantity").val();
+            let address = $("#address").val();
+
+            $("#confirmationMessage").text(`Thank you, ${name}! Your order for ${quantity} ${meal}(s) has been placed. Delivery to: ${address}.`)
+                .removeClass("hidden");
+
+            setTimeout(() => {
+                $("#confirmationMessage").addClass("hidden");
+                $("#orderForm")[0].reset();
+                $("#paymentModal").addClass("hidden");
+            }, 4000);
+
+            setTimeout(function () {
+                $("#order-button").removeClass("sent sending").text("Place Order");
+            }, 4500);
+        }
+    });
+</script>
+
+<style>
+    .hidden { display: none; }
+    .modal {
+        position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        background: white; padding: 20px; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(
+      rgba(52, 52, 52, 0.5), 
+      rgba(255, 255, 255, 0.5)), url(images/order_page_bg.jpeg);
+
+  font-family: 'Stalemate', cursive;
+        }
+
+        .background {
+    background: linear-gradient(135deg, rgba(160, 159, 159, 0.8), rgba(240, 248, 255, 0.9)); /* Subtle gradient with soft blue */
+    border-radius: 20px; /* Smooth rounded edges */
+    padding: 20px; /* Comfortable spacing */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Gentle shadow for depth */
+    border: 1px solid rgba(100, 149, 237, 0.5); /* Light cornflower blue border for definition */
+    color: #333; /* Contrast text color for readability */
+    font-family: "Verdana", sans-serif; /* Clean and modern typography */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.background:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            position: relative;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+            margin-left: 20px;
+        }
+
+        input, textarea, select {
+            width: 80%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-left: 20px;
+        }
+
+        button {
+            width: 40%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 150px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #order-button {
+            font-size: 18px;
+            color: #fff;
+            padding: 15px 30px;
+            text-align: center;
+            border: none;
+            border-radius: 40px;
+            transition: 0.3s ease background-color, 0.3s ease box-shadow;
+            background: #1e2a78;
+            cursor: pointer;
+            position: relative;
+            outline: none;
+        }
+
+        #order-button.sending {
+            background-color: #ffd615;
+            box-shadow: 0 20px 30px -6px #ffd615;
+        }
+
+        #order-button.sent {
+            background-color: #ff1f5a;
+            box-shadow: 0 20px 30px -6px #ff1f5a;
+        }
+
+        #order-button::after {
+            content: "\f0fb";
+            font-family: FontAwesome;
+            position: absolute;
+            right: 15px;
+            font-size: 20px;
+            transition: 0.3s ease transform;
+        }
+
+        #order-button.sending::after {
+            transform: rotateZ(-90deg);
+            animation: shake 0.3s ease 0.5s infinite;
+        }
+
+        #order-button.sent::after {
+            transform: rotateZ(-90deg);
+            animation: moveUp 1s ease forwards;
+        }
+
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-1px, 0, 0) rotateZ(-90deg); }
+            20%, 80% { transform: translate3d(1px, 0, 0) rotateZ(-90deg); }
+            30%, 50%, 70% { transform: translate3d(-1px, 0, 0) rotateZ(-90deg); }
+            40%, 60% { transform: translate3d(1px, 0, 0) rotateZ(-90deg); }
+        }
+
+        @keyframes moveUp {
+            0% { margin-top: 0; transform: scale(1) rotateZ(-90deg); }
+            100% { margin-top: -100px; transform: scale(0) rotateZ(-90deg); }
+        }
+
+        .confirmation {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4caf50;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</body>
+</html>
